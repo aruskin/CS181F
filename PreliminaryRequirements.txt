@@ -1,0 +1,96 @@
+Floradex: Preliminary Requirements
+
+
+Gardeners:
+        Gardeners would want to use our app in order to:
+1. find information on a specific plant (gardener wants to identify what grows in their garden)
+2. find what grows in specific locations (gardener wants to add additional plants to their garden/see if it’s compatible with their environment)
+3. maintain a virtual garden or a favorites list - “my garden” (gardener is a plant enthusiast, maintaining virtual garden is a way to feed that interest; gardener finds some plants that interest them and use “my garden” to easily refer back to their favorite plants)
+        Gardeners might not necessarily be the most tech savvy people so it is important to 
+make this app easy to use:
+- It should be easy to search for a plant by many different ways (i.e. name, characteristics, location, etc.)
+- It should also be easy to find an extensive list of plants that grow in locations that the user inputs so that gardeners have the ability to search for plants that they can grow.
+- “My Garden” should be easy to use as well, more graphics based with a nice user interface
+        Therefore the requirements we must have to meet these needs are: 
+1. different ways to search for plants (i.e. keywords, family, characteristics, name, etc)
+2. provides multiple pictures (different angles) of a plant to help with identification
+1. use navigation system to pinpoint location and give list of plants that grow in that area
+2. create a virtual “my garden” where the user can keep track of their favorite plants
+3. large database/libraries of plants
+4. database of plants should tell all of the main characteristics of the plant as well as where it grows, if it’s edible or poisonous, etc.
+        
+Hikers:
+        Hikers would want to use our app in order to:
+1. identify the plant in front of them (hiker is on a hike and runs across a plant that they’re interested in identifying for a variety of reasons (i.e. pure interest, see if it’s edible, see if it’s poisonous))
+2. ask an expert (i.e. a botanist) to help identify a plant 
+3. be able to look up the plants that grow in a certain environment (hiker wants to know what plants to look for before they even start the hike, or maybe while on the hike)
+4. add plants that they have seen along their hike to keep track of them (hiker wants to keep track of what they have seen and where they have seen it)
+
+
+Hikers don’t necessarily want to be on their phone all of the time while they are on a hike so making the app easy and quick to use is necessary (if it’s too much work, no hiker will use it, especially during a hike):
+- quick search with many search options and a large database, including search by location
+- quick way to mark a plant you’ve seen and where you have seen it  (maintain a map)
+- easily add plants to your virtual garden
+                - offline usability (for areas with no service)
+        Requirements that satisfy these needs are:
+1. different ways to search for plants (i.e. keywords, family, characteristics, name, etc)
+2. provides multiple pictures (different angles) of a plant to help with identification
+3. use navigation system to pinpoint location and give list of plants that grow in that area (can check to see what other plants hikers have come across, constantly updating map)
+1. create a virtual “my garden” where the user can keep track of their favorite plants
+2. allow the capability to mark where the hiker has seen a plant (updating a map of where you are hiking)
+3. large database/libraries of plants
+4. database of plants should tell all of the main characteristics of the plant as well as where it grows, if it’s edible or poisonous, etc.
+5. everything must be easy and quick to use! 
+6. easily post pictures of a plant a hiker wants an expert to identify
+7. the ability to search/identify plants without the internet is key!
+
+
+Botanists:
+        Botanists would want to use our app in order to:
+1. help add to the database of plants (botanists, being plant enthusiasts, will have the incentive to educate others, contribute to the database of knowledge, and put their expertise to use)
+2. answer questions in picture submissions (user has the ability to submit a picture of a plant they cannot identify and botanists can help identify it)
+3. increase their knowledge of plants by using the plant identification system (botanist wants to look up specific information about a  plant)
+4. edit wiki pages/act as a monitor (other users will have ability to vote for you - the more you correctly identify plants and correctly identify plants, the higher level of expertise you will have; you can become a “verified” use of this app - people will trust your word)
+        
+        Botanists are tricky as it’s hard to give them incentive to help others identify plants.  
+Therefore creating a system where you can become more credible on this app as you correctly identify plants  will give experts like botanists incentive to use this app.  Considering this, in order to cater to botanists it is important to have:
+        - levels of expertise that are gained as you correctly identify more plants and 
+as people upvote you to make you a more verified source on this app
+- extensive library/database with information pertinent to a botanist/expert (not 
+just a newbie)
+                - ability to edit wiki pages/act as monitors once they’ve reached a certain 
+level of credibility
+- make “my garden” easy to use and yet interesting enough to an expert like a 
+botanist
+        Requirements that satisfy these needs:
+1. different ways to search for plants (i.e. keywords, family, characteristics, name, etc)
+2. provides multiple pictures (different angles) of a plant to help with identification
+1. create a virtual “my garden” where the user can keep track of their favorite plants
+2. large database/libraries of plants
+3. database of plants should tell all of the main characteristics of the plant as well as where it grows, if it’s edible or poisonous, etc.
+4. everything must be easy and quick to use! 
+5. a voting system: beginner, intermediate, advanced, expert
+6. wiki pages that experts can monitor/add to
+7. easy to go through pictures of plants that people want identified so that botanist/experts can identify them and get affirmation from other experts/botanists
+
+
+Other users (sub categories of ones listed above):
+1. nursery employees (fall under botanists/experts if they have identified enough plants, otherwise fall in subcategory of gardener)
+2. teachers/educators who aren’t necessarily botanists: app not necessarily meant for them but could help them in certain situations like planning school trips/hikes to see what plants can be seen/if they’re poisonous
+3. plant enthusiast (could fall under any of the above categories): someone just genuinely interested in plants and wants to identify or keep track of what they see (i.e. student or any lover of nature)
+
+
+Based off of the needs of the users listed above we need to the following requirements:
+1. different ways to search for plants (i.e. keywords, family, characteristics, name, etc)
+2. provides multiple pictures (different angles) of a plant to help with identification
+1. use navigation system to pinpoint location and give list of plants that grow in that area
+2. create a virtual “my garden” where the user can keep track of their favorite plants
+3. large database/libraries of plants
+4. database of plants should tell all of the main characteristics of the plant as well as where it grows, if it’s edible or poisonous, etc.
+5. allow the capability to mark where the hiker has seen a plant (updating a map of where you are hiking)
+6. everything must be easy and quick to use! 
+7. easily post pictures of a plant a hiker wants an expert to identify
+8. the ability to search/identify plants without the internet is key!
+9. a voting system: beginner, intermediate, advanced, expert
+10. wiki pages that experts can monitor/add to
+11. easy for botanists/experts to go through pictures of plants that people want identified so that botanist/experts can identify them and get affirmation from other experts/botanists

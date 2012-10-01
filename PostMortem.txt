@@ -1,0 +1,37 @@
+Post-mortem Report
+During the post-mortem for our Project I (Concept Development, Requirements and Proposal), we discussed the positives and negatives in Project 1 and proposed solutions and suggestions for improvement. The discussion went as follows:
+1. First the moderator asked all team members to write about happy & crappy (positives and negatives) about this project on index cards.
+2. Moderator read off each point from the index cards and let team members discuss about each card: providing more information, adding comments, and raising questions and issues.
+3. For each issue/question raised, we then discussed and proposed solutions for future projects.
+
+
+The positives (combined from all index cards):
+1. Good brainstorming session – had several viable ideas to choose from
+2. Our idea is interesting and exciting for all of us. 
+3. During extensive research on other plant apps, we found positives and negatives about each product and thus gain knowledge and confidence about our own product.
+4. Considered various types of users
+5. Getting good/new suggestions from the elicitation.
+6. Pretty solid grasp of what we want our product to do
+7. Getting everything turned in in time.
+8. Having a group that’s easy to work with. Everybody contributed equally and worked hard.
+9. Excellent team name ☺
+10. We learned about how to plan a project and how to actually turn an idea into an executable project.
+11. Learned how to use github and how to do competitive research and elicitation.
+
+
+The negatives (combined from all index cards):
+1. Didn’t plan very well for elicitation session: only ended up with two interviewees from the same category (no botanist or plant expert)
+2. May have too many features
+3. Having to cut down on our cool ideas to make our project feasible
+4. Did not stick to our schedule for each subtasks (internal pre-due dates)
+5. Did not know how to use github at first
+6. Not enough communication on drafts. More comments from other team members would be helpful for the primary author.
+7. Did not come prepared to meetings with a clear agenda about what exactly we had to do and how to do them.
+
+
+
+Proposed solutions and improvements suggestions:
+1. Should have planned ahead of time and get out of our comfort zone to find interviewees other than students.
+2. Additional individual interviews with users from other categories
+3. Enforce strict internal deadlines and leave more time before the actual due dates for team member to comment and edit the drafts.
+4. All team members should read through the deliverables and requirements for future assignments and the primary author will drive the discussion and collaboration.

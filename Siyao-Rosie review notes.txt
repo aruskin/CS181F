@@ -1,0 +1,17 @@
+Diagram:
+The diagram does not have a specific start state or end state. Where does user input (new code) come into play in the diagram?
+
+Inconsistent Vocabulary:
+The process described in the overview is not clearly shown in the diagram. Some vocabulary of the information being passed in and the name of components are not consistent with the rest of the architecture.
+e.g. build triggers, build number vs. build ids, rosie API, build info, build result vs. build status, synchronous worker vs. builder
+
+Frontend component:
+Only very brief discussion on the web frontend of the product. Even though the functionalities of the frontend is limited and clear, it is still helpful to know how it interacts with the users and how will the information be presented.
+
+More information:
+You guys mentioned briefly about configuration file but the information is not enough to know what it is and how you are implementing it. 
+
+Similar problem with synchronous and asynchronous worker: the comparison is not detailed enough about the pros and cons of each. Are you planning for large projects in the future? How difficult is it to change from synchronous worker to asynchronous in the future?
+
+Overall:
+Your architecture shows that you have thoughtfully flush out what your product is and how you will implement it. The list of attributes of a build object is very clear and straightforward, but more clarification and explanation might be necessary in other parts of the architecture in order to improve readability. Some details are glossed over probably because they were already very clear to you.

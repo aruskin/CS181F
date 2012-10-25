@@ -1,0 +1,44 @@
+Rosie architecture notes:
+
+Component analysis doesn't seem to actually contain any analysis? You state that 
+you're experience in using the components that you've listed, but is there any other 
+reason why these are the best options (for example, what about MongoDB makes it 
+"well-suited to the structure of the Build object")?
+
+Similarly, in the issues section, it's mentioned that asynchronous work is "mostly 
+useless and occasionally problematic" for smaller projects. Maybe explain why this 
+is the case instead of assuming that it's obvious? Expanding on this would also help 
+clarify why you're still "uncertain" about this decision, and maybe the process of 
+writing out a rationalization would make you more certain.
+
+As a whole, the architecture makes a lot of assumptions about the reader's level of 
+knowledge and experience, which may be safe, and this could just be a personal 
+issue, but...maybe give a little background on what JSON is, what some of the GitHub 
+specific terms mean, etc.
+
+Not entirely clear how the descriptions of components relate to delivering required 
+functionality. You may want to add a brief summary of requirements you intend to 
+fulfill and how current architecture is satisfying them. A description of the process 
+from the user perspective may be helpful as well. The diagram seems to show that 
+users will be able to build from either the CLI or Web interface, but I don't think 
+that's clear from the prose description.
+
+The language used in the description of HTML frontend (in "Interfaces") makes it 
+unclear whether showing build history and exposing configuration options are its 
+only two features or it's most important two features. Is it useful to expand on its 
+other features if the latter is true? Also, is this different than the diagram? Same 
+issue with the use of "primarily used in the setup stage" in description of CLI. Should 
+we care about its other uses? 
+
+Overall, the team seems confident about the organization of components and the 
+feasibility of implementation, but may have left out justifications and details that 
+may just seem obvious to them. Since the group's project is geared towards 
+programmers, it's understandable that any abstractions and descriptions of user 
+interaction with the product will still use a very technical vocabulary, but again, this 
+seems to occasionally be at the expense of explanations of functionality. I felt that it 
+was unclear how exactly someone would use this product, which is obviously in part 
+due to my complete lack of knowledge with regard to this type of software, but is 
+probably something that should be included in the architecture.
+
+
+

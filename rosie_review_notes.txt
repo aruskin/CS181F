@@ -1,4 +1,4 @@
-Rosie architecture notes:
+Amy's Rosie architecture notes:
 
 Component analysis doesn't seem to actually contain any analysis? You state that 
 you're experience in using the components that you've listed, but is there any other 

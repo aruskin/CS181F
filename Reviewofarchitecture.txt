@@ -1,0 +1,43 @@
+﻿Review of architecture:
+
+
+Architecture overview:
+- 4 primary components (Application server, build queue, synchronous worker thread, database)
+- “The primary function provided by the entire architecture is the ability to build a build when new code is pushed to Github.” - now i don’t know what the primary function is...i assume objects?
+- great detail on the flow of the system; easy to follow
+
+
+Component Analysis:
+- listed technologies used (Flask, MongoDB, JSON API)
+- Flask is a web framework but what does it do? (am i missing something?)
+- is this the place where you’re supposed to justify why you’re using certain technologies over others? (it seems like the component analysis is just explaining how much experience you have with each technology, not its function in the bigger picture)
+
+
+Interfaces:
+- explains both internal (MongoDB ORM, Build Queue) and external (JSON API, HTML frontend, CLI)  interfaces
+- good job at explaining uses of each interface within the project
+
+
+Persisted Objects:
+- Build object: type of object in the Database using MongoDB
+- good - names its attributes
+
+
+Diagrams:
+- shows relationships between Rosie server and UI
+- Rosie server: shows information passed between each component of the system; gives direction of the information
+- Rosie API:
+- User interface: shows how the user input interacts with the other components of the system
+
+
+High Level Description of Runtime Components:
+- Application server: server’s primary responsibility is to handle the post-receive WebHook from Github; shows form of webhook post of data
+- Build Queue: good
+- Synchronous Worker Thread: “The worker thread builds the user's project in the background...” built in the synchronous builder i assume
+- Database: talks about interactions with Application Server and SWT; good explanation
+- Configuration File: good
+
+
+Architecture Issues:
+- solved issues: “after talking to Mark, everything was cleared up.”; don’t know if it’s necessary but maybe explain what the solution was other than knowing that it was about ‘putting together the right pieces”
+- outstanding issues: don’t know enough about this

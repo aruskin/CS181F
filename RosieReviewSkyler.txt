@@ -1,0 +1,33 @@
+Rosie Architecture Review – notes
+Skyler Lipscomb
+10/25/12
+
+Broken down document by document for clarity
+
+Component Analysis
+I’m not really liking the way this is presented – “We’ve written lots of it so it’s the best way to do it” doesn’t really cut it for me. I find that it gives me confidence that they’ll be able to get it up and working for the project, but to me that doesn’t mean that a different technology they didn’t look into. I would have liked at least a little research and some notes saying “we also looked at blah blah blah and our choice works better because blah blah blah”. 
+
+Interfaces
+External:
+I think this may be more my lack of familiarity with the pieces, but, while I found the JSON and HTML chunks descriptive enough, the CLI was still a little unclear to me. Not sure if this is the right place for this, but I would like some clarification about why the CI would only have a single command, if, if it does, why it would need its own command line?
+Internal:
+Maybe clarify that the queue is holding database entry build numbers? I had a bit of trouble trying to figure out at first why there wasn’t a bigger issue with how the queue interacted with the database until I went back to look at the diagram and saw the queue only held build NUMBERS, not the objects themselves.
+
+Issues
+I liked that you put both solved and outstanding together. I don’t have any suggestions about the synchronous vs asynchronous due to lack of experience. 
+
+Overview
+Just for clarity with regards to the database – “With the Build objects persisted, the Application Server enqueues the Build.id of both objects onto the Build Queue.” Should this say “all objects” or am I just unclear about the things being put onto the queue? I’d like some more clarity about it. If we are really talking about “both”, what those two are, and how/when is the rest of the information in the database put onto the queue? Also, though this seems slightly trivial now that I found it, I had trouble finding where the database actual was used in the description. This was mostly because since it was last in the list of components, I expected it to come last in the process, but it actually comes second.
+
+Persisted_Objects
+Just for clarification – is the info in the build object is all able to be found from the commit information, not needing to be added separately, right? Otherwise, found this very clear and helpful.
+
+Rosie Architecture
+Something I’m unclear on is, do the results of the build also get stored in the database of the builds? In the overview, it says that the server loads the build objects and displays their info in html. Does this include whether they were successful or not, and if so, how does this info get back from the synchronous builder to the database?
+Also, would be more clear if you made sure that the component names in the overview and in the diagram were consistent. “Task queue” vs “Build queue”, “Rosie Sever” vs “Application server”, etc. Obviously you all know what you’re talking about, but it would have sped up my understanding if the names were consistent. 
+I think that the internal/external diagrams in one worked well in your case since each piece didn’t have too many parts. 
+
+Runtime Components
+Not sure the code actually needs to be provided in this part? I would find it more clear if it actually wasn’t included… Also, when you say “All of this should be reasonably simple” do you mean for the user or easy for you to construct? 
+Where is the configuration file stored? Is it in the database or somewhere else? How do users change their configurations?
+

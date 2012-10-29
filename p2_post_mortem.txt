@@ -1,0 +1,93 @@
+Preliminary architecture:
+
+Cons:
+      Unfortunately, we felt like we were being thrown into a bottomless pit here. 
+Our main problem in this section was not knowing what an architecture should look 
+like. Although we understand the reasoning behind the choice to not provide us with 
+any examples of software architecture, we still feel like it would have been helpful 
+just to get an idea of what sort of information to include (for example, how specific 
+do we need to be about the implementation?) and what level of abstraction is 
+acceptable. Now that we've gone through this, though, we feel that we have a better 
+understanding of what's expected in an architecture.
+      Our collective lack of experience regarding app programming and SQL was a 
+huge detriment here, and although we thought we were just black-boxing 
+components that we didn't understand, we ended up ignoring some key 
+interactions. 
+      The due date for the preliminary architecture coincided with midterms for 
+many of our classes, and since we agreed to take part in the in-class review session, 
+we were in even more of a rush, so as a result, we did not devote as much time to the 
+preliminary architecture as it deserved. Given everyone's differing schedules, this is 
+kind of a difficult problem to avoid, since our management plan can't always account 
+for unexpected workloads in other classes. 
+      Our component analyses also weren't thorough enough, due to our lack of 
+foreknowledge of some of the technology and time to do research. In the future, we 
+would want to ask people with experience in the relevant areas for help or dedicate 
+more time to research.
+      
+Pros:
+      Siyao's UI wireframe was really helpful in showing that our layout of 
+information would be feasible and allowed us to more easily conceptualize how 
+someone would actually use our product.
+      We felt that we took on a reasonable amount of functionality for the first 
+version of the product. 
+
+Rosie's review session of our project:
+
+Cons:
+	This was a pretty rough experience. Enough said. 
+	Still, it's key to remember that the quality of your work shouldn't reflect on 
+your self-worth.
+
+Pros:
+	Rosie's review was instrumental in setting us on the right path for our final 
+architecture. They brought up a lot of issues that we weren't aware of and were 
+willing to provide us with advice on how to go about fixing them. 
+
+Our review of Rosie's project:
+
+Cons:
+	It was intimidating to have to review the architecture for a project that we 
+didn't really understand. We weren't sure we'd be able to find any important issues 
+or defects. As it turned out, this wasn't a huge problem.
+
+Pros:
+
+	We each studied and prepared well for the review, and we felt that the 
+review session was thorough and ultimately useful to the other team.
+	Reading through another group's architecture was helpful in getting more of 
+an idea about how architectures work and determining how to write our final 
+architecture.
+	We also gained a better understanding of architecture reviews.
+	The review report was easy to write, since we had previously rehearsed our 
+review session and stuck to our agenda.
+
+Final architecture:
+
+Cons:
+	Once again, lack of time was an issue, due to fall break. We may want to try 
+harder to plan around breaks and midterms in the future.
+	It was depressing to have to cut out a lot of the cool features from our 
+requirements and settle for the minimum functionality that would be feasible to 
+implement and still result in a useful project. However, this was inevitable.
+
+Pros:
+	It was nice to observe our group's ideas about the project merging. We've 
+mostly reached an agreement on what each component should do and now feel 
+more confident about the inner workings of the software.
+	We kept a list of issues to address based on Rosie's review and divided up the 
+tasks, which made the revision process more manageable.
+	We showed Rosie our updated diagram and brought up some of our fixes, 
+and they seemed satisfied.
+
+
+Other:
+
+	Everyone's finally on GitHub (yay!)
+	Still working together well as a team-everyone's willing to do work and 
+follow deadlines
+	Kept management plan updated, but internal deadlines changed a lot due to 
+people's schedules
+	Overall, we felt that we learned a lot from this project, as painful as it may 
+have been. We definitely better understand what an architecture entails and how 
+our own product will come together. It was useful to experience both sides of the 
+review process as well.

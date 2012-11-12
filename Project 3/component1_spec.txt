@@ -1,0 +1,41 @@
+Component 1-Tree Traversal
+
+General description & role in system:
+ 
+This is the component that actually goes through each step of the dichotomous key 
+by traversing the binary tree representation of the key. It compiles a list of 
+characteristics that the user has indicated the plant has, which is used later to 
+search for partial results. If the user doesn't skip to the end at any point, then they 
+will also get the "official" (as sanctioned by whatever dichotomous key we end up 
+adapting) match for their plant.
+
+External interfaces:
+
+The tree traversal component reads in a text file representation of the dichotomous 
+key to convert into a binary tree.  The component will communicate with the display 
+component (Component 2) by sending the information stored at each node in the 
+tree and receiving the user's choice of how to proceed (right, left, or skip). When the 
+traversal has hit a leaf or been told to skip, the component will send a list of 
+associations of questions and answers to the search results component (Component 
+3).
+
+Requirements:
+
+-Must read in text file representation of dichotomous key in a specific format and 
+correctly convert it into a binary tree
+-Each node of the tree must contain the necessary information for the display 
+component to show on the screen and to store in the list that will be passed 
+to search results function.
+-Links to images must be valid paths to files, questions and answers must be 
+stored as strings and correspond to fields and entries in the plant database
+-The value of the leaves of the tree should be the name of the plant that 
+matches all of the previous answers. 
+-Must correctly traverse tree based on user input
+-Be able to send value to the display component at each node and receive 
+back an indication of which branch to go down based on the user input.
+      -Only stop traversing once the user has elected to skip or we hit a leaf.
+-Must return a list of the right format to be used by the search result component
+-Maintain a list of associations of questions and the answers selected that will 
+be sent to the search results component once we've finished traversing.
+-Any plant mentioned by the dichotomous key must be in the database, and the 
+questions asked must be fields in the database

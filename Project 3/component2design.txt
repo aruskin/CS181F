@@ -1,0 +1,113 @@
+Team: Floradex
+Component 2 Design
+Amy Ruskin
+
+The purpose of this module is to: 
+1) create a binary tree of the dichotomous key by reading in a text
+representation of the key
+2) provide a method for traversing the tree based on the user's
+input and returning a list of the characteristics of the plant compiled based on
+the user's selections
+
+Need to import Java's Bailey structures library
+http://dept.cs.williams.edu/JavaStructures//doc/structure5/index.html
+to get BinaryTree, Node, Association, List
+
+Need to import Java's io library for BufferedReader, FileReader, Scanner
+
+Provides a structure for the data stored in each node of the binary
+tree to allow easier access to each individual part (question, left answer, etc)
+
+public class KeyTriple{
+       * variables:
+		* question (String): the question associated with this
+		(for example, "Does the plant have broad or narrow
+		leaves?")
+		* left (Association<String, String>): the key will be
+		the answer associated with the question and the value
+		will be the name of the file with an image for that
+		answer (for example <"broad" = ".../broad.gif">)
+		* right (Association<String, String>): the key will be
+		the answer associated with the question and the value
+		will be the name of the file with an image for that
+		answer (for example,, <"narrow" = ".../narrow.gif">)
+	* methods: 
+	  	// to create an instance of the class; parameters for
+		all data needed for the variables
+	  	 *public KeyTriple (String q, String lft, String
+		 lftImg, String rt, String rtImg){}
+
+	  	//need accessor methods for each value
+	  	* public String getQuestion() {}
+		* public String getLeftAnswer() {}
+		* public String getRightAnswer() {}
+		* public String getLeftFileName() {}
+		* public String getRightFileName() {} 
+		// Component 2 can take care of actually accessing the
+		image files
+}
+
+
+METHODS: 
+
+Helper method for converting file to binary tree; recursively creates
+nodes based on lines from text file. BufferedReader is a class that
+allows efficient reading of lines from a stream.
+
+private BinaryTree<KeyTriple> readFileHelper(BufferedReader reader){
+	*  variables:
+		* line (String): stores the current line of the file
+	* reader reads in a line from the file
+	* text in file should be formatted in such a way that each
+	line contains the question, answers, and names of image files,
+	separated by specific tokens so that we can parse out the data
+	from each line
+	* if there's an indication that the line is not a leaf, return
+	a tree with the value from the line and call this method again
+	for each of the children
+	* else if there's an indication that the line is a leaf,
+	return a tree with the value from the line and no children
+}
+
+Actual method to convert file to binary tree, takes in name of file to
+be converted, returns completed tree. 
+
+public BinaryTree<KeyTriple> fileToTree(String filename){
+       * create a BufferedReader whose input is a FileReader for the
+       filename indicated
+       * call readFileHelper on that BufferedReader
+}
+
+Method to traverse tree based on user input, takes in a binary tree
+with dichotomous key data, returns list of characteristics indicated
+by the user. 
+
+public List<Association<String, String>> traverse(BinaryTree<KeyTriple> tree){
+    * variables:
+	* finger (Node): the node that we're currently considering
+	* done (Boolean): whether or not we're finished traversing the
+    	tree
+	* characteristicsList(List<Association<String, String>>): the
+    	list of characteristics of the plant which will be used by
+    * Component 3 to search the database 
+    	* set finger to the root of the tree
+    * set done to false
+    while(!done){ //user has not yet reached a leaf or elected to skip
+	* send the value of the current node to Component 2, using the
+	query method, which will return "LEFT", "RIGHT", or "SKIP"
+	* variable result(String) stores the result of the call to query
+	if(result == "SKIP") then set done to true
+	else{
+		* variable plantChar(Association<String, String>): the
+    		key will be the question associated with current node, the value
+    		will be the answer the user has chosen
+		* push plantChar onto characteristicsList
+		* update finger to appropriate child of node (as
+    		indicated by result)
+		if(finger.isEmpty) then set done to true
+		//this means we have reached a leaf
+	}
+    }
+    return characteristicsList
+}
+

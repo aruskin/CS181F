@@ -21,21 +21,27 @@ associations of questions and answers to the search results component (Component
 
 Requirements:
 
--Must read in text file representation of dichotomous key in a specific format and 
+1) Must read in text file representation of dichotomous key in a specific format and 
 correctly convert it into a binary tree
--Each node of the tree must contain the necessary information for the display 
+   1a) The value of the leaves of the tree should be the name of the plant that 
+       matches all of the previous answers.
+2) Each node of the tree must contain the necessary information for the display 
 component to show on the screen and to store in the list that will be passed 
 to search results function.
--Links to images must be valid paths to files, questions and answers must be 
-stored as strings and correspond to fields and entries in the plant database
--The value of the leaves of the tree should be the name of the plant that 
-matches all of the previous answers. 
--Must correctly traverse tree based on user input
--Be able to send value to the display component at each node and receive 
+3) Must correctly traverse tree based on user input
+   3a) Only stop traversing once the user has elected to skip or we hit a leaf.
+4) Be able to send value to the display component at each node and receive 
 back an indication of which branch to go down based on the user input.
-      -Only stop traversing once the user has elected to skip or we hit a leaf.
--Must return a list of the right format to be used by the search result component
--Maintain a list of associations of questions and the answers selected that will 
+5) Must return a list of the right format to be used by the search result component
+6) Maintain a list of associations of questions and the answers selected that will 
 be sent to the search results component once we've finished traversing.
+
+The following requirements are dependent on the correctness of the text file and database
+and are not actually the responsibility of this component. We assume these are true for
+Component 1 to work:
+
+-Links to images (as listed in the text file) must be valid paths to files, questions and answers must be 
+stored as strings and correspond to fields and entries in the plant database
 -Any plant mentioned by the dichotomous key must be in the database, and the 
-questions asked must be fields in the database
+questions asked must be fields in the database 
+

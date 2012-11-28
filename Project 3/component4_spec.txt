@@ -14,13 +14,13 @@ Results Page:
 After Component 3 completes the search, the users will see a list of possible results, displayed in the order from the most relevant (highest percentage of matches) to the least relevant (plants under 50% match will not be displayed). For each plant in the list, a thumbnail image of the plant as well as its common name and its percentage of match will be displayed. Each result is clickable and the responsive area will cover the full row except the edges to eliminate unintended operations.
 
 Fact Sheet:
-When the user selects a plant from the list of results (by clicking on the responsive area of the plant), the window will show the formatted information from the database. There will be 3 sections: picture, general information (common name, scientific name, family and etc.), detailed information (habitat, plant attributes, uses). 
+When the user selects a plant from the list of results (by clicking on the responsive area of the plant), the window will show the corresponding factsheet stored in a local folder. There will be 3 sections: picture, general information (common name, scientific name, family and etc.), detailed information (habitat, plant attributes, uses). 
 
 Requirements
 •	Correctly read the list of plants from the search results from Component 3
 •	Display the list of results in the order by relevancy and in layout visually pleasing for the users. *
 •	Respond to mouse clicks from the users to jump to the specified plant’s fact sheet page.
 •	Correctly read the plant information from the database.
-•	Format and display the plant information in a visually pleasing layout. *
+•	Display the plant information in a visually pleasing layout. *
 * We will need to get user feedback on the layouts.
 

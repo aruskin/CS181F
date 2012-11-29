@@ -1,0 +1,162 @@
+Component 1 Test Plan
+
+Overview of functionality:
+
+Component 1 reads in the dichotomous key from a text file and converts it into a binary tree to 
+traverse. At each node of the tree, the component must send information to Component 2 and 
+receive an indication of which branch the user has chosen. Component 1 maintains a list of 
+characteristics that the user has indicated so far and passes that list to Component 3 once it has 
+finished traversing the tree.
+
+Approaches for verification:
+
+The general approach to verify the correctness of this component will be to run the component's 
+methods with simulated input and compare the output to expected results. In order for us to be 
+able to test the component individually, Component 1 will need to have a placeholder routine for 
+dealing with input from/output to Component 2 that will be able to write to a text file of output 
+and read in a text file of user input to simulate the query method that would serve as an 
+interface between the two components. 
+
+
+Index of test cases:
+
+Black box:
+1. Converting (correctly formatted) text input to binary tree
+2. Handling incorrectly formatted text input
+3. Traversing the tree (stopping at leaves)
+4. Traversing the tree (skipping)
+5. Handling unexpected input from Component 2
+6. Passing correct information to Component 2
+
+White box:
+7. Accessor methods for KeyTriple work correctly
+8. Non-existent file passed in as parameter to fileToTree method
+9. Empty tree passed in as parameter to traverse method
+
+
+Testing framework:
+
+Since this program will be written in Java, we will use JUnit (Java's unit testing framework) to 
+conduct our tests.
+
+
+List of test cases:
+
+
+Black box test cases:
+
+1. Converting (correctly formatted) text input to binary tree
+Requirement: Must read in text file of representation of dichotomous key in a specific 
+format and correctly convert it into a binary tree.
+Justification: We may want to modify the dichotomous key in the future, so having the 
+program read in a text file to build a binary tree allows us to make changes to the text file 
+without touching the actual program. Of course, this assumes that the text file is in the 
+correct format to be read in and that whoever changes it follows that format and updates 
+the database as appropriate.
+Testing: Create text files in the expected format, and create a binary tree representation 
+of the files manually to be the expected result. Compare the result from the component's 
+file to tree function to the expected result.
+Correctness: If testing the trees for equivalency returns true, then the program has 
+correctly converted from text file to binary tree.
+
+2. Handling incorrectly formatted text input
+Requirement: In the event that the component receives invalid input for the text 
+representation of the dichotomous key, return an error message.
+Justification: The methods for converting a file to a binary tree completely depend on the 
+file being correctly formatted. If the formatting of the input file is no longer correct, then it 
+has probably been carelessly modified, which may be a sign of inconsistencies with the 
+database as well.
+Testing: Create text files with both obviously and subtly incorrect formats and run the file 
+to tree function with these as input.
+Correctness: The program should return the correct error message. 
+
+3. Traversing the tree (stopping at leaves)
+Requirement: Must correctly traverse tree based on user input and stop traversing when 
+it hits a leaf. The returned list must contain the correct information and be in the correct 
+format to be used by Component 3.
+Justification: Performing the dichotomous key based search is the main functionality 
+expected of Component 1. A search is completed when it reaches a leaf of the binary 
+tree, which should contain the name of the plant that matches all of the previous 
+answers.
+Testing: Create scripts for input without skips to simulate user input from Component 2. 
+Create a list of associations for the expected result of the traversal. Run the traverse 
+method with the scripts and compare the result to the expected result.
+Correctness: If the traverse function finishes after hitting a leaf and testing the 
+association lists for equivalency returns true, then the program is correctly traversing the 
+tree for complete input (without skips).
+
+4. Traversing the tree (skipping)
+Requirement: Must correctly traverse tree based on user input and stop traversing when 
+the user has elected to skip. The returned list must contain the correct information and 
+be in the correct format to be used by Component 3.
+Justification: Again, performing the dichotomous key based search is the main 
+functionality of this component. A search is also completed when the user elects to skip 
+a question and receive the partial results from the search.
+Testing: Create scripts for input with skips to simulate user input from Component 2. 
+Create a list of associations for the expected result of the traversal. Run the traverse 
+method with the scripts and compare the result to the expected result. Make sure that 
+one of the test inputs only has "SKIP"--should return an empty list.
+Correctness: If the traverse function finishes after receiving the indication to skip and 
+testing the association lists for equivalency returns true, then the program is correctly 
+traversing the tree for valid partial input (with skip).
+
+5. Handling unexpected input from Component 2
+Requirement: In the event that Component 2 sends anything other than "LEFT," 
+"RIGHT," or "SKIP," return an error message.
+Justification: The method for traversing the tree is dependent on receiving correct input 
+from Component 2 in order to choose which branch to go down or to quit traversing. 
+Receiving incorrect input from Component 2 is probably indicative of a larger issue.
+Testing: Create scripts with intentionally incorrect input to simulate user input from 
+Component 2 and run the traversal method.
+Correctness: The program should return the correct error message.
+
+6. Passing correct information to Component 2
+	Requirement: Must be able to send value to the display component at each node.
+Justification: This component needs to pass the question, answers, and names of image 
+files associated with the answers (i.e., the information necessary for Component 2 to set 
+up the display) to Component 2 at each node so that Component 2 can then get user 
+input to send back to Component 1.
+Testing: Run the traversal method with one of the valid input scripts and write output at 
+each node into a text file to simulate sending output to Component 2. Compare output 
+generated by method to expected output.
+Correctness: The generated output should contain all of the information necessary for 
+Component 2 to create the display and testing for equivalency with the expected output 
+should return true.
+
+White box test cases:
+
+7. Accessor methods for KeyTriple work correctly
+Requirement: The accessor methods for KeyTriple should return the correct types and 
+correct elements of the class.
+Justification: KeyTriple is a structure for storing the question, left answer and image file 
+name, and right answer and image file name. The values of the nodes of the tree will be 
+KeyTriples, so we'll be passing a KeyTriple to Component 2. We need to be sure that 
+the accessor methods work correctly so that Component 2 doesn't have issues retrieving 
+the data from the KeyTriple.
+Testing: Create a test KeyTriple and assert that each of the accessor methods return the 
+expected type and specific element of the structure. 
+Correctness: If the assertions return true, then the accessor methods are correct.
+
+8. Non-existent file passed in as parameter to fileToTree method
+Requirement: Only valid files should be used as input; if an invalid filename is passed in 
+as a parameter, we should return an error message.
+Justification: The black box testing takes care of the case in which incorrectly formatted 
+files are passed in to the fileToTree method, but we still need to consider the case in 
+which a reference to a non-existent file is used.
+Testing: Run the fileToTree method with an invalid file name as the parameter.
+Correctness: The program should return the correct error message.
+
+9. Empty tree passed in as parameter to traverse method
+Requirement: In the event that traverse is called on an empty tree, we should return an 
+error message.
+Justification: If the tree is empty, then there's no information to pass to Component 2, 
+and thus nothing to display. There has either been an issue with the file to tree 
+conversion method or the dichotomous key input file has been corrupted. Rather than 
+just send an empty list to Component 3, we should return an error message so that the 
+issue can be resolved.
+Testing: Run the traverse method with an empty tree as the parameter.
+Correctness: The program should return the correct error message.
+
+
+
+

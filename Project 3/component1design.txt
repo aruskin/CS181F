@@ -16,9 +16,9 @@ to get BinaryTree, Node, Association, List
 Need to import Java's io library for BufferedReader, FileReader, Scanner
 
 Provides a structure for the data stored in each node of the binary
-tree to allow easier access to each individual part (question, left answer, etc). Will not be used by any other component--just providing convenience for Component 1.
+tree to allow easier access to each individual part (question, left answer, etc). Used by Components 1 and 2 (when Component 1 passes the node value to Component 2)
 
-private class KeyTriple{
+public class KeyTriple{
        * variables:
 		* question (String): the question associated with this
 		(for example, "Does the plant have broad or narrow

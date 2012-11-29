@@ -1,0 +1,61 @@
+﻿Component 3 Test Plan
+Robin Momii
+
+
+General overview:
+
+
+This component takes in a list of associations of a plant that the user is searching for and searches through the plant database to find the top matches.  It creates a list of plants that have the highest matching percentage, which is determined by how many of the associations match a plant.  Because some characteristics of the plants might not be obvious nor easy to identify for some users, we want to be able to return the highest matches from the database, even if none of them exactly match the list of associations. This list is passed on to Component 4 where the user can look through the top ten results.  There is no special framework for these tests.  Each test case works within this component and can be set up without the use of the other components.
+
+
+Index of test cases:
+
+
+        Black Box test cases:
+                1. Return a list of best matches
+        White Box test cases:
+                2. Incomplete list passed in as a parameter
+                3. Null list passed in as a parameter
+                4. Associations within list exist in the database
+                5. Complete, working database; information retrieval
+
+
+Black box test cases:
+
+
+1.  Requirement(s):  Must read in list of associations properly in order to look up each 
+one within the database.  This requires a working database that can searched 
+through by association.
+Justification:          This is an important function of this component.  If this component 
+cannot properly read in a list of associations and look them up in the database then none of the requirements can be met.
+Set-up/Correctness:  Pass this component a list of associations and query the database 
+for each association.  See if it returns a list of plants that match the given associations.  There is no special setup needed since this component will already be calculating the percentage match of the plants that it has queried to pick the top 10 matches.  If we pass this component a list of associations that we know specifically matches one plant, then our top match should have a 100% match and should appear at the front of our list.  We could further test this component by passing that same list of associations, except this time we change one of the associations so that we know we should be getting a smaller percentage match but the same plant should still be our top match.  That way, we have an idea of ascertaining the correctness since we already know what plants are in the database.
+
+
+White box testing:
+
+
+2.  Requirement: Must read in a valid list of associations that is complete.
+Justification: If you don’t have a complete valid list of associations, you can’t query the 
+database.  In other words, if you are passed the category “color” but the user’s answer isn’t passed with it, then I can’t search the database for that specific color.
+Set-up/Correctness: Test by passing in an incomplete list of associations.  The 
+component should handle the error by skipping the given association if it is not complete (i.e. if “color” is given but a specific color is not given) and should continue to calculate the matches based off of the other associations.  If none of them are complete, then the component should send a signal back to the previous components to prompt the user for questions again.
+
+
+3.  Requirement: Must read in a non empty valid list of associations.
+Justification: If the list is empty, then we can’t query the database.
+Set-up/Correctness: Pass in an empty list.  The component should handle it by sending a 
+signal back to Component 1 to prompt the user for questions again.
+
+
+4.  Requirement: Given associations in list must exist within database.
+        Justification: If the given associations are invalid or don’t exist within the database then 
+we can’t query the database.
+Set-up/Correctness: Pass in a list with associations that don’t exist in the database.  The 
+component should have the same behavior as Test Case # 2.
+
+
+       5.  Requirement: Database must be valid and complete in order to return plant names.
+        Justification: Without a working, complete database, we can’t complete the query.
+        Set-up/Correctness: Create a set of automated tests that send in a list of associations 
+that specifically match each plant within the database and see if it returns that plant as a top match.  If the database has an invalid entry then the component should behave as the same as Test Case #2 and #4.  If the query never returns anything from the database (i.e. the plant name does not exist in the database, or the query just failed) then there is no possibility of returning a set of plants.  We would need to notify the system that a major error has occurred and notify the user that the applet is no longer working.

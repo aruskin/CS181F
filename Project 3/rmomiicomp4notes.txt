@@ -1,0 +1,17 @@
+﻿Component 4
+
+
+Component 4 Spec Review
+        Summary: takes the top search results from Component 3 and displays them in a proper
+format that allows the user to browse through the information
+
+
+1. clear, organized -- much details on “clicking”
+Component 4 Design Review
+1. a way for the user to redo a search if they don’t get the results they want? interacting with Component 1 and 2
+2. if allowing the user to search again, dealing with cleanup?
+3. resolve interactions with Component 3: passing the correct parameters
+4. instance variables?
+Component 4 Test Plan Review
+1. looks good
+2. how to test if UI is “visually pleasing”?

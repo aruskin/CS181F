@@ -1,0 +1,15 @@
+﻿Component 1
+
+
+Component 1 Spec Review
+Summary: creates binary tree from the dichotomous key by reading in text representation 
+of key; traverses tree based on users answers and returns list of characteristics of the plant the user is searching for
+1. size of binary trees we will be dealing with
+2. maintaining correct relationships with component 2 and 3
+3. make sure we are using the same database
+Component 1 Design Review
+1. component 3 will be receiving a List<Association<String, String>>, where the first string represents the name of the category and the second string represents the user’s choice
+2. how will component 3 interact with component 1 (how will the List<Association<String, String>> be passed)
+3. will this component deal with clean up?
+Component 1 Test Plan Review
+1. what if your component returns an incomplete list (affects interaction with Component 3)?

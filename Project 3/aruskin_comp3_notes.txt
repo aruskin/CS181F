@@ -1,0 +1,17 @@
+Component 3 Review Notes:
+
+Specifications:
+-may want to mention what the associations are composed of--"list of associations of a plant" is very ambiguous
+-otherwise, seems reasonable
+
+Design:
+-what about case where > 10 results with the same pecent match? current design seems like it would attempt to cut this down further, which could lead to a list with length < 10 and potentially 0
+-condition for while loop in main function is (L != null). Since L is a list, should that be something like (!L.isEmpty) instead?
+-concern about searching by filtering: fine if database only contains plants from dichotomous key, since this will just simulate the dichotomous key search if list is in same order, but potentially a problem if database contains other plants as well, as may filter out good matches based on the order of the associations in the list
+-what exactly is the ResultSet class? I'm assuming that's an SQL thing, but might want to just add a sentence explaining what type of information is stored in ResultSet
+-unclear whether queryPlant is supposed to take in an Association (as indicated b the description and usage in main) or a List of Associations (as indicated by the actual parameter)
+-returned list of results does not say what percent match each result is. Might want to consider adding that functionality? 
+
+Test Plan:
+-for test case 1, not sure how the plan to test further would work--would that be changing the order in which associations are listed or the associations themselves? In the latter case, why would this guarantee that the top match would stay the same?
+-could there be database access issues that we should test for? I don't know anything about the Java implementation of SQL, so this might not be valid.

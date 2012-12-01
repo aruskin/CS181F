@@ -1,0 +1,16 @@
+Component 4 Review Notes:
+
+Specification:
+-inconsistencies with Component 3 about results list--need to resolve whether returning top 10 matches (stated in Comp 3) or matches of >= 50% (stated in Comp 4)
+-impressive consideration of usability (having large and clear responsive areas for clicking)
+-clarification: are fact sheets made from information pulled from database or saved files?
+
+Design:
+-no declarations of instance variables other than list of results. What about button/display objects?
+-will fact sheets have a back button to allow users to return to results page?
+-may want to mention how you're handling invalid file paths in readFromFile (although it does seem to be mentioned in the test plan)
+-seems pretty straightforward otherwise
+
+Test Plan:
+-minor issue with first test case: how can you measure that display is visually pleasing?
+-inconsistency: specification lists "Correctly read the plant information from the database." as one of the requirements--seems like design and test plan don't deal with the database at all

@@ -1,0 +1,21 @@
+Component 2 Review Notes:
+
+Specifications:
+-seems reasonable!
+-minor linguistic clarification: "Component 1 initially sends a node of the search tree"
+       -should be sending node value not literal node and search tree maybe implies that this is a Binary Search Tree type rather than just a Binary Tree. Does that matter? (probably not)
+
+Design:
+-clarification on actionPerformed vs clicked--what's the difference between the methods and where are they called?
+-should the button/display objects be instance variables?
+-interacting with Component 1
+	     -I used KeyTriple instead of NodeValue as the name of the class, so we'll need to decide on one of those for consistency
+	     -Component 2's main function and Component 1's traverse method are also inconsistent...
+-no indication of how pictures are going to be displayed (which is mentioned in the requirements). If this is going to be part of the component's functionality, how will it deal with invalid paths to image files (need to add test case for this as well)? If not, should remove from requirements.
+
+Test Plan:
+-requirements from specification seem to be covered, other than "easy to read format and layout"--not sure how you'd do an automated test for that
+-may want to update design to include the error conditions that the test plan expects to be handled
+-test to make sure interface set-up method works? (not just displaying the correct text, which is handled, but displaying anything at all)
+-handles invalid input from Component 1, but what about invalid user input? (maybe Abstract Window Toolkit takes care of this? might want to mention that anyway)
+-otherwise, seems pretty complete. Not really sure what other problems could arise.

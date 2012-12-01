@@ -1,0 +1,17 @@
+﻿Component 2
+
+
+Component 2 Spec Review
+        Summary: create the dichotomous key’s GUI; handle interactions with the user and
+sends appropriate information back to Component 1
+
+
+1. a lot of interaction with Component 1; making sure they interact quickly and efficiently
+2. correctly gather a list of choices the user has given
+Component 2 Design Review
+1. how will this component handle clean up after the user has finished giving input?
+2. interacting with Component 1: KeyTriple vs. NodeValue?
+Component 2 Test Plan Review
+1. looks good -- seems to have covered everything
+2. “easy to read” format testing?
+3. invalid user input?

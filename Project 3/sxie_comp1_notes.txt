@@ -25,6 +25,10 @@ associations instead?
 
 Test Plan:
 - test 1: Since this test involves some manual labor, will it only be tested once with one file?
-          Would it be worth it to consider some corner cases? Or Does it only have to work for the specific file you created? Is comparison for equivalency done manually as well? It wasn't exactly clear about this part.
-- For some tests, you might want to list the specific cases you will test (for example, skipping initially, skipping in the middle, skipping at the end, always choosing left, always choosing right, randomly chosing left or right and etc.).
+          Would it be worth it to consider some corner cases? Or Does it only have to work for 
+          the specific file you created? Is comparison for equivalency done manually as well? It 
+          wasn't exactly clear about this part.
+- For some tests, you might want to list the specific cases you will test (for example, skipping 
+initially, skipping in the middle, skipping at the end, always choosing left, always choosing 
+right, randomly chosing left or right and etc.).
 

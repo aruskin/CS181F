@@ -1,0 +1,30 @@
+Reviewer: Siyao Xie
+Component 1 Review Notes
+
+Spec:
+Overall structure is good. Very organized and detailed.
+
+- Clarification: In previous discussion, I have the impression that the tree will just 
+serve as a "keyword" collector and will pass all the keywords to component 3
+to do the search instead of just using its leave. But component 1 seems to be doing 
+both? Is component 1 in charged of returning the leave before component 3 do the 
+search? How is it communicating with component 4 to display the leave as part of the 
+result?
+
+Design:
+Impressive detail! Some part of it feels like pseudocode already! Adding some 
+whitespace might improve readability.
+
+- What is the format of characteristicsList(List<Association<String, String>) and how 
+are they generated? Are these associations same as the plantChar(Association<String, 
+String>) where the key will be the question associated with current node, the value
+will be the answer the user has chosen. But component 3 seems to be expecting 
+associations of just the keyword and attribute. How is component 3 going to parse the 
+string to obtain the keywords? Should component 1 output a ready to go list of 
+associations instead?
+
+Test Plan:
+- test 1: Since this test involves some manual labor, will it only be tested once with one file?
+          Would it be worth it to consider some corner cases? Or Does it only have to work for the specific file you created? Is comparison for equivalency done manually as well? It wasn't exactly clear about this part.
+- For some tests, you might want to list the specific cases you will test (for example, skipping initially, skipping in the middle, skipping at the end, always choosing left, always choosing right, randomly chosing left or right and etc.).
+

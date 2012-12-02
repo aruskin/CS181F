@@ -1,0 +1,16 @@
+Reviewer: Siyao Xie
+Component 2 Review Notes
+
+Spec:
+Very clear and reasonable interfaces and requirement!
+- Should the requirement include error handling?
+
+Design:
+Nice arrangement of classes. The comments help alot.
+- Where will the pictures be displayed? Will they be part of the buttons?
+- In component 1, it is mentioned that "Component 2 can take care of actually accessing the image files". How will they be accessed?
+
+Test Plan:
+- In the Passed an incorrect input test, the expected behavior will be "Exit if passed incorrect input". Should it output an error message (to user or to component 1)? Simply exiting will still be like crashing to users.
+- Should probably update the spec and design for the error handling cases (common problem for all of us :p).
+

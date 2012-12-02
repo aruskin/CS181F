@@ -1,0 +1,22 @@
+Component Review Notes
+Skyler Lipscomb
+12/2/12
+
+
+COMPONENT 1
+
+DESIGN
+-Looks like good libraries for importing; should support everything you need in the rest of the class.
+-KeyTriple: let's discuss what terminology we should use - yours seems more accurate than my use of "NodeValue", since it is of course a triple. Will work with you on consistancy between our two vocabularies.
+-KeyTriple methods: I think maybe the constructor should be private? Component 2 will only need the accessor methods, not the constructor, so it seems safer to make it private.
+-Let's maybe also talk about how the text file should be formatted so file reading can work. Which lines should the children be at in relation to the parent line? This is more specific design, but it seems important to make sure it will be feasible to write easily.
+-I think your traverse method looks great! Really well laid out and I think it matches up with the component 2 specs for query, so we shouldn't have trouble with that interaction. We may want to consider changing that method name to "userQuery" (will do in component 2) so that it isn't mixed up with database queries in component 3. 
+
+
+
+TESTING
+-Converting text file input to binary tree: looks great, any thoughts on what sort of edge cases we would need to deal with here? Will there be one overarching error message for incorrect input or different ones based on the scenarios?
+-Good thoughts on the KeyTriple testing.
+
+
+Overall very thorough and it looks like it's ready to be implemented! 

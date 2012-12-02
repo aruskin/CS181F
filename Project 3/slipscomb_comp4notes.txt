@@ -1,0 +1,20 @@
+Component Review Notes
+Skyler Lipscomb
+12/2/12
+
+
+COMPONENT 4
+
+DESIGN
+-Good thought adding the factSheet class: should make it much easier to pull info from the files! Just for clarification, will a mouse click in the window with the list of results pop up ANOTHER window with the fact sheet info? (It looks like it does.)
+-Also, might want to put more info into the file about which JFrame methods you'll be using to do what parts. (I should also do more of that in my design for component 2.) Do you have any specific ones you'll be using for the layout of the factsheets vs. the results page?
+-Very clear and simple design, I think you split up the tasks well. Maybe some more clarification that you'll be able to do everything using JFrame would be good? 
+ 
+
+
+TESTING
+-I like your ideas for testing consistency across the results page display. I should definitely add something like this to my component 2 tests. (Though "visually pleasing" might be a hard one...? That might be something to take out of automatic testing and add to something like a plan to get user feedback on the layout.
+-Any thoughts on what should happen if the default image cannot be located? Do we need to deal with a case like this? Maybe some kind of JFrame display or image drawing can be used in the case of the missing default image file.
+-Scrolling: Even though the scrolling inputs can be used, how do we actually check that they're working correctly? We can't sit and watch them since it needs to be automatic. Any ideas on how to do a check on this?
+
+Looks good, though we'll both need to figure out how to test for "visually appealing" GUI interfaces... Also, still wondering a little what sorts of assertions you're going to use in the test cases - only the first listed the exact criteria that need to match.

@@ -1,0 +1,23 @@
+Component Review Notes
+Skyler Lipscomb
+12/2/12
+
+
+COMPONENT 3
+
+DESIGN
+-In the Interface description is says it takes in the assocaitions from component 2, but it's actually from component 1.
+-Looks like you've got the SQL methods down fine; your pseudocoding looks like it will turn into fine working code!
+-Is ResultSet a class in SQL? It's not defined anywhere so it would be good to clarify that.
+-This might be a good component to handle the main() method for the overall applet... we should talk about it.
+-Nitpicky but: in makeList might want to change from l to a different variable name for it. I misread it as "1" and was really confused! 
+
+
+
+TESTING
+-Black box: probably need to be more specific about how we're checking the results against the correct answer. We're going to need to figure out by hand the percentages and list order, I think, to make sure the component is returning the right results.
+-Complete association list: should a missing association maybe be an error rather than just skipped?
+-How does component 1 handle a signal to ask for questions again if the association list is empty? Maybe instead of a signal we just restart the process? I don't think comp. 1 has a way to receive signals from comp. 3 at the moment.
+-Not sure I understand how the valid and complete database test works. This would be a feasbile way to check the database if it's small, but a larger database makes this check really long and we may miss some parts. Would like clarification about this test (how it will be written) and what the intent is.
+
+The design seems really clear and should be feasible to take from pseudocode to working code. For the testing, would like to see how the tests will actually be verified - a lot are tests that should return the "correct" result, but doesn't show how we obtain a correct result to start with to check against. 

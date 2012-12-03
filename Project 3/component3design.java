@@ -26,7 +26,7 @@ Requirements:
 
 */
 
-package database_console;    	//import for the DB
+package database_console;        //import for the DB
 
 import java.sql.*;                      //imports for database
 import java.util.List;                  //using a List
@@ -59,7 +59,9 @@ class Query {
             
             
             
-            /* read in the list of associations of questions and the users given answers from Component 3
+            /* read in the list of associations of questions and the users given answers from Component 3;
+            if an incomplete list is passed in, skip the question/answer pairs that are incomplete and still try and query the database with the other associations;
+            if list is null, send signal back to system to restart the dichotomous key search
             /*
             
             //List<Association<String, String>> l;
@@ -80,15 +82,21 @@ class Query {
             // List<Association<String,String>> final = makeList(rs);
 
         }
-        catch ( SQLException err ) {
+        catch ( SQLException err ) {    //handles error with SQL
             System.out.println(err.getMessage());
         }
     }
     
     public ResultSet queryPlant(Assocation<String, String> association) {
-        // takes in an Association object and looks up the association in the database
-        // and queries the database for the users choice to return a smaller set of plants
-        // that will be returned back to main
+        /* takes in an Association object and looks up the association in the database
+        and queries the database for the users choice to return a smaller set of plants
+        that will be returned back to main
+        */
+        
+        /* if the association being queried doesn't exist in the database, we can't return an answer;
+        therefore we skip that question and try and query the rest of the associations
+        */
+        
         ResultSet rs;
         //iterate through each association in the given stack and narrow down the DB
         return rs;

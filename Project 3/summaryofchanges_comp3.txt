@@ -1,0 +1,21 @@
+﻿Summary of fixes for Component 3:
+
+
+1. Specs: 
++ Fix vocabulary (“list of associations” should be “list of associations of questions and the user’s answers”)
++ Instead of displaying the top 10 matches, display the top matches that have a percentage match of 50% or higher
++ Instead of returning a list of top plants, return a list of top plants and their percentage match
++ Added comments of error handling
+2. Design: 
++ Fix vocabulary (“list of associations” should be “list of associations of questions and the user’s answers”)
++ Changed the condition for while loop from not null to not empty 
++ Renamed list “l” to “L” for easier clarification
++ Moved database information outside of main for organization 
++ Clarifying how this component filters out results (one possibility for future version: given list of associations, query the database for all n associations, if it returns nothing then query the database for n-1 associations, name methods) 
++ Fixed parameter of queryPlant from List<Association<String, String>> to Association<String, String> 
++ Fixed return type of makeList (from List<String> to List<Association<String,String>>)
++ This component should return the percentage match with the given plant: List<Association<String, String>>
++ Added comments of error handling
+3. Test: 
++ Clarify the pre-made lists for black box testing (to test for correctness)
++ Restart the entire process if returned a null list (as opposed to just signaling Component 1)

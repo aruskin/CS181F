@@ -1,0 +1,34 @@
+Team: Floradex
+Final Component 2 Revisions
+Last updated 12/2/2012
+
+SPECS:
+**Clarified that pictures ARE included in this component. Was already in the specs but
+   was accidentally left out of the remaining portions. Went through and updated all
+   documents to reflect this specification.
+**Clarified that component 1 passes a node's VALUE, not the node itself.
+**Changed "binary search tree" -> "search tree" since not really a BST. An incorrect
+   vocabulary use.
+**Removed requirement that it is "easy and clear to use". This was not quantifiable.
+   Instead changed to consistancy of display within the window.
+
+DESIGN:
+**Added leftPicture and rightPicture as variables.
+**Changed all variables except for nextNode to private, as they will only be
+   accessed in this class.
+**Changed portions with "NodeValue" to have "KeyTriple".
+**removed main() method, as it is not handled in this class. It will be done in
+   the overarching method that controls all four components.
+**Added closeWindow method to be used by the overarching control method to clean up
+   after window is done being used.
+**Clarified reason for actionEvent vs. clicked methods within the comments.
+**Renamed "query" method to "userQuery" to distinguish between it and the component
+   3 class "Query".
+
+TESTING:
+**Changed incorrect input passed test from "exiting" to "error". This component does
+   not handle exiting the whole program - it simply needs to detect an error and pass
+   that information along.
+**Changed from NodeValue to KeyTriple.
+**Clarified and expanded the testing for the correct information display test based on
+   the tests proposed for component 4.  

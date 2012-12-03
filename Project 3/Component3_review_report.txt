@@ -1,0 +1,67 @@
+Team: Floradex
+Component 3 Review Report
+
+5:00 PM
+December 2, 2012
+Attendees: Skyler Lipscomb, Robin Momii, Amy Ruskin, Siyao Xie
+Scribe: Siyao
+
+Spec
+
+Characterization: Issue
+Must-fix 
+	-requirement inconsistent with Component 4, should update the requirement and design to return all plants match 50% of above
+
+Characterization: Issue
+Must-fix 
+	-In consistent with Test Plan about error handling requirement. should update to include error handling.
+
+Characterization: Clarification
+Should-fix
+	-What format is the list of associations of plants specicfically.
+
+
+Design:
+
+Characterization: Concern
+Must-fix 
+	-reconsider searching method (Partial match might not be complete if search by filtering).
+
+Characterization: Issue
+Must-fix 
+	-Inconsistent with component 4: list of results should return percentage as well
+
+Characterization: Issue
+Must-fix 
+	-In consistent with Test Plan about error handling requirement. should update to include error handling.
+
+Characterization: Clarification
+Should-fix
+	-the list of associations should come from comp1 instead of comp2
+	-in while loop for main, null should be not empty
+	-Does the class ResultSet come w/ sql?
+	-QueryPlant method: unclear take in a association or list of assiosiations? 
+
+Characterization: Clarification
+Could-fix
+	-makelist method: variable from l to something else to avoiding miss understanding
+	-less code like
+
+
+Test:
+
+Characterization: Issue
+Must-fix
+	-update spec and design about error handling 
+
+Characterization: Clarification
+Should-fix
+	-What is considered a valid and complete database?
+	-how to actually compare the actual results with standard results - (premade list to test against, consider having assertion)
+
+
+Overall:
+This component is approved with changes. The major problems were some inconsistency with other 
+components due to misunderstanding and miscommunication. The fixes should consist of resolving
+the inconsistency within the team and clarifying about minor issues. This component is solid and 
+clear otherwise.

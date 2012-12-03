@@ -1,0 +1,47 @@
+Team: Floradex
+Final Component 2 Specifications
+Last updated 12/2/12
+
+General Overview
+
+Component 2 facilitates the interactions between the user and the internal storage
+of the dichotomous key in Component 1 during the search. The component will supply
+this functionality by creating an interactive window for the users to supply their
+key choices in. Information from the key will be passed to this component, which 
+will parse and display this information in the window. The window will include text 
+at the top which asks the key questions, such as “Does the plant have broad or 
+narrow leaves?” It will then display the pictures that have been stored in the node 
+for each of the two answers, as well as buttons enabling the user to select either 
+“Broad” or “Narrow” as their choice – or, if they would prefer to skip the rest of 
+the questions, they can select “Skip”. This choice will then be passed back to the 
+internal storage of the key and will allow the correct path to be traversed in the 
+Search Tree version of the tree. This back-and-forth between components 1 and 2 will
+continue until a leaf of the tree has been reached or “Skip” is passed, after which
+Component 2 is finished being used. 
+
+
+Interfaces
+
+User Interface
+The component will be an interactive computer window which the user can see. Within
+the window, they will be able to read the question and see both possible answers and 
+corresponding pictures on one screen, as well as the Skip option. Each answer will 
+be displayed as a button, and the user can click with the mouse to select an answer.
+The component will register only mouse clicks on the buttons as input from the user.
+
+
+Component 1 Interface
+The interface will be in two directions between these components, as they both must 
+send and receive information from the other. Component 1 initially sends the value
+of a node of the search tree to Component 2 for displaying. After the user has input 
+their preference, Component 2 passes back either “LEFT”, “RIGHT”, or “SKIP” as the 
+next path in the search tree.
+
+
+Requirements
+-Display question, answers, and pictures in a consistent way
+-Respond to mouse clicks from the users
+-Correctly read and display information from the dichotomous key stored in Component 1
+-Correctly pass back LEFT, RIGHT, or SKIP based on the user input to Component 1
+-Handle incorrect input from component 1
+

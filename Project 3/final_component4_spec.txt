@@ -1,0 +1,46 @@
+Team: Floradex
+Component 4 Final Specifications
+Last updated 12/2/12
+
+General Overview
+Component 4 displays the search results returned by Component 3 as well as compiles and displays 
+the factsheets of the results. After searching the database, the search results component will 
+return a list of the top plants that match the list of the associations. Because some 
+characteristics of the plants might not be obvious and easy to identify for some users, we want 
+to be able to return searches from the database, even if none of them exactly match the list of 
+associations.  The matches will be ordered by a percentage that is determined by how many of the 
+associations in the list match a given plant.  That way the user can browse through a list of 
+possible plants that are similar to the one they were searching for. When the user selects one of 
+the plants from the list, a factsheet of the plant will be displayed in a new window. The 
+factsheet will contain information about the scientific name, common name and description.
+
+Interfaces
+
+User Interface
+The component will be an interactive window which the user can see. The component will register 
+mouse clicks on responsive areas and “up” and “down” keyboard inputs for scrolling up and down 
+the list.
+
+Results Page:
+After Component 3 completes the search, the users will see a list of possible results, displayed 
+in the order from the most relevant (highest percentage of matches) to the least relevant (plants 
+under 50% match will not be displayed). For each plant in the list, a thumbnail image of the 
+plant as well as its common name and its percentage of match will be displayed. Each result is 
+clickable and the responsive area will cover the full row except the edges to eliminate 
+unintended operations.
+
+Fact Sheet: 
+When the user selects a plant from the list of results (by clicking on the responsive area of the 
+plant), a new window will show the corresponding factsheet stored in a local folder. There will 
+be 3 sections: picture, general information (common name, scientific name, family and etc.), 
+detailed information (habitat, plant attributes, uses). 
+
+Requirements
+•	Correctly read the list of plants from the search results from Component 3
+•	Display the list of results in the order by relevancy.
+•	Respond to mouse clicks from the users to jump to the specified plant’s fact sheet page.
+•	Correctly read the plant information from the database.
+•	Display the plant information.
+•	Display placeholder image drawn by jFrame when thumbnail unaccessible.
+•	Display error messages correctly when no results are returned or when factsheets are 
+unavailable.

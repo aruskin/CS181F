@@ -1,5 +1,5 @@
 Team: Floradex
-Component 2 Specifications
+Component 4 Specifications
 Last updated 11/11/12
 
 General Overview

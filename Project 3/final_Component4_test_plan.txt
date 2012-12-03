@@ -1,0 +1,162 @@
+ Component 4 Final Test Plan
+ Siyao Xie
+
+ Functionality Overview:
+ Component 4 needs to display the search results returned by Component 3 by 
+ relevancy (from the highest number of keyword matches to the lowest). For
+ each plant in the list, a thumbnail image of the plant, its common name and 
+ its percentage of match will be displayed. 
+
+ The component also needs to handle mouse click selections and keyboard 
+ inputs ("up" and "down" for scrolling). And when the user selects one plant 
+ from the list, it needs to display the factsheet of the selected plant in a 
+ new window. 
+ 
+ General Approach:
+ With the list of search results from Component 3 (assuming the search has 
+ been triggered in Component 2 and searching has been done in Componeng 3), 
+ an interactive window will correctly display the search results (correct 
+ order, correct thumbnail, name, and percentage for each plant). Automated 
+ GUI testing framework UISpec4J will be used to simulate user activities (]
+ mouse click selections) on each item in the list. After selection, the 
+ correct factsheet should be displayed in a new window with no missing or
+ ill-formatted information. 
+
+ Test Case Index:
+ Display:
+	 Results Layout Testing (Black box)
+	 No Results Returned Test (Black box)
+	 Unaccessible Thumbnail Test (White box)
+ 
+ Interaction:
+	 Scrolling Test (Black box)
+	 Display Factsheet Test (Black box)
+	 Unaccessible Factsheet Test (White box)
+
+
+ Testing framework:
+ UISpec4J is an Open Source functional and/or unit testing library for Swing-
+ based Java applications, built on top of JUnit and TestNG. UISpec4J's APIs 
+ are designed to hide, as much as possible, the complexity of Swing, 
+ resulting in easy-to-write and easy-to-read test scripts. It provides a
+ library that allow us to easily simulates interaction of GUI.
+
+List of Test Cases:
+
+
+Results Page Display:
+
+Results Layout Testing (Black box)
+Assertion: 
+	Items have homogenous layout across the list.
+
+Justification:
+	This is an important user interface requirement. The layout must be consistent across items to achieve visual balance.
+
+Testing:
+	With the list of search results from Component 3 (assuming the search has 
+ 	been triggered in Component 2 and searching has been done in Componeng 3, 
+ 	an interactive window will display the search results.
+
+Correctness:
+	Assert dimension value equal to design:
+	Same height, same margin, thumbnail takes up the same amount of space, 
+	spacing between thumbnail, plant name and percentage are the same. 
+
+
+
+No Results Returned Test (Black box)
+Assertion:
+	If no result is returned by Component 3, the window should display "No 
+	Results Found".
+
+Justification:
+	User might input invalid searches that yield no results or the database
+	might not have the matching results. It is important to let them know
+	that the search is unsucessful.
+
+Testing:
+	This test requires simulating Component 3 returning no result (results.size() = 0).
+
+Correctness:
+	Assert the error message displayed equal to intended error message. 
+
+
+Unaccessible Thumbnail Test (White box)
+Assertion:
+	When a thumbnail is missing or unaccessible, a placeholder image drawn by Jframe 
+	will be displayed instead.
+
+Justification:
+	Memory corruption or bad operations could result in file loss. The 
+	thumbnail images stored on the local disk might be temporarily
+	unaccessible, accidently deleted or renamed. To minimize the effect, 
+	a placeholder image should be displayed instead.
+
+Testing:
+	Remove an arbitrary thumbnail from the local thumbnails folder or change 
+	its name. Display a list of search results where the thumbnail is needed.
+
+Correctness:
+	Assert image displayed equal to placeholder image in size and color.
+
+
+Results Page Interaction:
+
+Scrolling Test (Black box)
+Assertion:
+	When pressing "up" or "down" on the keyboard, the list of results should 
+	be able to scroll up and down.
+
+Justification:
+	The total length of the list of results might exceed the height of the display window, thus scrolling is needed.
+
+Testing:
+	UISpec4J will simulate keyboard input to scroll up and down multiple times:
+	at the top of the list, at the bottom of the list and in the middle of the 
+	list.
+
+Correctness:
+	Assert slider knob position equal to intended position.
+	Scrolls up or down according to the action performed.
+
+
+Display Factsheet Test (Black box)
+Assertion:
+	When clicking to select a plant in the results list, the factsheet display 
+	window will display the corresponding plant's factsheet.
+
+Justification:
+	This is an important functional requirement.
+
+Testing:
+	UISpec4J will simulate clicking to open a new window to display the 
+	factsheet. It will go down the list and select all of the items one by one 
+	to ensure that all items are working. Each new selection triggers the 
+	factsheet window to refresh and display the new corresponding factsheet.
+
+Correctness:
+	Assert the factsheet displayed equal to intended factsheet. 
+
+
+Unaccessible Factsheet Test (White box)
+Assertion:
+	When clicking to select a plant in the results list, if the corresponding 
+	factsheet is unavailable, the factsheet display window will display an 
+	error message "Factsheet Unavailable".
+
+Justification:
+	Memory corruption or bad operations could result in file loss. The 
+	factsheets stored on the local disk might be temporarily unaccessible, 
+	accidently deleted or renamed. The user should be notified with a clear 
+	message. No back button is necessary here since the results list page is 
+	in another window.
+
+Testing:
+	To set up, some of the factsheets will be intentionally removed from the 
+	local folder. When UISpec4J simulates clicking through the list of 
+	results, some of the plants will not have a corresponding factsheet.
+
+Correctness:
+	Assert the error message displayed equal to intended error message. 
+

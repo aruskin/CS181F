@@ -1,0 +1,30 @@
+﻿Component 4 Review Report
+Scribe: Robin Momii
+
+
+5:20 December 2nd, 2012
+Edmunds Computer Lab
+Team Floradex
+Skyler Lipscomb, Robin Momii, Amy Ruskin, Siyao Xie
+
+
+Component 4 Review/Report
+        Specs:
+1. There are inconsistencies with Component 3 about the results list and what parameters are passed between them; MUST FIX
+2. Are fact sheets made from information stored in the database?  It will have ready made files with information about each plant in the database; QUESTION
+3. Vote: APPROVED with required changes
+        Design:
+1. Are you popping up a new window with fact sheet? It was mentioned in the specs; QUESTION
+2. Will you declare instance variables for display; QUESTION
+3. How are you handling invalid file paths? Mention in design; SHOULD FIX
+4. What about a button to restart the dichotomous key?; QUESTION
+5. Vote: APPROVED
+        Test:
+1. How do you test if the UI is visually pleasing?; QUESTION
+2. There is an inconsistency with the spec list that reads the plant information from the DB in one of the requirements (the spec is inconsistent with the design/test); MUST FIX
+3. In regards to using a default image instead of actual picture: what if you can’t access the default image? Can you find something in jframe that can be displayed in place of the picture?;QUESTION
+4. What are some way to check that “scroll” capability is working?; QUESTION
+5. Vote: APPROVED with required changes
+
+
+Component 4 vote: APPROVED with required changes

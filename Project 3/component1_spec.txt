@@ -2,26 +2,34 @@ Component 1-Tree Traversal
 
 General description & role in system:
  
-This is the component that actually goes through each step of the dichotomous key 
+This is the component that actually goes through each step of the dichotomous 
+key 
 by traversing the binary tree representation of the key. It compiles a list of 
-characteristics that the user has indicated the plant has, which is used later to 
-search for partial results. If the user doesn't skip to the end at any point, then they 
-will also get the "official" (as sanctioned by whatever dichotomous key we end up 
+characteristics that the user has indicated the plant has, which is used later 
+to 
+search for partial results. If the user doesn't skip to the end at any point, 
+then they 
+will also get the "official" (as sanctioned by whatever dichotomous key we end 
+up 
 adapting) match for their plant.
 
 External interfaces:
 
-The tree traversal component reads in a text file representation of the dichotomous 
-key to convert into a binary tree.  The component will communicate with the display 
+The tree traversal component reads in a text file representation of the 
+dichotomous 
+key to convert into a binary tree.  The component will communicate with the 
+display 
 component (Component 2) by sending the information stored at each node in the 
-tree and receiving the user's choice of how to proceed (right, left, or skip). When the 
+tree and receiving the user's choice of how to proceed (right, left, or skip). 
+When the 
 traversal has hit a leaf or been told to skip, the component will send a list of 
 associations of questions and answers to the search results component (Component 
 3).
 
 Requirements:
 
-1) Must read in text file representation of dichotomous key in a specific format and 
+1) Must read in text file representation of dichotomous key in a specific format 
+and 
 correctly convert it into a binary tree
    1a) The value of the leaves of the tree should be the name of the plant that 
        matches all of the previous answers.
@@ -32,15 +40,29 @@ to search results function.
    3a) Only stop traversing once the user has elected to skip or we hit a leaf.
 4) Be able to send value to the display component at each node and receive 
 back an indication of which branch to go down based on the user input.
-5) Must return a list of the right format to be used by the search result component
-6) Maintain a list of associations of questions and the answers selected that will 
-be sent to the search results component once we've finished traversing.
+5) Must return a list of the right format to be used by the search result 
+component
+6) Maintain a list of associations of questions and the answers selected that 
+will be sent to the search results component once we've finished traversing. 
 
-The following requirements are dependent on the correctness of the text file and database
-and are not actually the responsibility of this component. We assume these are true for
+Note: If the traversal reaches a leaf, the association of the field "name" (or 
+whatever it ends up being called in the database) and the name of the plant that 
+is the value of the leaf will be added to the list of associations. This will be 
+useful in a later implementation, when the database contains more plants than 
+just those stored in the dichotomous key, as the plant with the stored name will 
+turn up as the 100% match, while a plant with all of the other characteristics 
+but a different name would be a lower match. This behavior seems reasonable, as 
+the dichotomous key sanctioned match may seem more "official."
+
+
+The following requirements are dependent on the correctness of the text file and 
+database
+and are not actually the responsibility of this component. We assume these are 
+true for
 Component 1 to work:
 
--Links to images (as listed in the text file) must be valid paths to files, questions and answers must be 
+-Links to images (as listed in the text file) must be valid paths to files, 
+questions and answers must be 
 stored as strings and correspond to fields and entries in the plant database
 -Any plant mentioned by the dichotomous key must be in the database, and the 
 questions asked must be fields in the database 

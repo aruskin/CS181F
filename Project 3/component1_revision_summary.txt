@@ -1,0 +1,13 @@
+Summary of changes to Component 1:
+
+Specification:
+* Added justification for adding plant names to characteristics list, as this was a point we had debated earlier.
+
+Design:
+* Added clarification about correspondence between associations in characteristics list and database entries.
+* Changed KeyTriple class to private, because constructor should only be used in Component 1.
+* Added indications of how errors would be handled, for consistency with the test plan.
+* Changed the "query" to "userQuery" for consistency with Component 2. We changed the name of the method to avoid confusion with Component 3's database query.
+
+Test Plan:
+* Added more specific cases for testing correctness of the file to tree conversion method.

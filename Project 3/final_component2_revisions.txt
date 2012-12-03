@@ -22,6 +22,8 @@ DESIGN:
 **Added closeWindow method to be used by the overarching control method to clean up
    after window is done being used.
 **Clarified reason for actionEvent vs. clicked methods within the comments.
+**Renamed "query" method to "userQuery" to distinguish between it and the component
+   3 class "Query".
 
 TESTING:
 **Changed incorrect input passed test from "exiting" to "error". This component does

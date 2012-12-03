@@ -91,7 +91,7 @@ class UserInterface extends JFrame implements ActionListener {
    * or "SKIP" is then returned from the function for the tree's information.
    * The KeyTriple class is a self-designed structure that is used to hold the information in
    * each node of the BST. It is defined in the dichotomous key tree component. */
-  public String query(KeyTriple x) {
+  public String userQuery(KeyTriple x) {
     return nextNode; // Placeholder for compilation's sake
   }
   

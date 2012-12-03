@@ -1,0 +1,91 @@
+Team: Floradex
+Component Review Report
+
+4:20PM
+December 2nd, 2012
+Attendees: Amy Ruskin, Robin Momii, Skyler Lipscomb, Siyao Xie
+
+Review of Component 1
+
+
+**Spec: Passing leaves of tree to component 3
+
+Inconsistency between component 1 and component 3 - component 1 would
+pass the name of a plant through the attribute list if a leaf of the
+tree was reached in questioning; component 3 was expecting only attributes
+of plant, not the name itself. Clarification must be made about the
+requirements of both, and should be consistent between the two components.
+Both function the same way, but clarification should be made as to why
+one was chosen over the other, as it affects the method for deciding
+partial results in component 3.
+
+Characterization: QUESTION
+Should-fix
+
+
+**Design: KeyTriple (comp. 1) vs. NodeValue (comp. 2)
+
+Inconsistent vocabulary referring to the same object class being used
+between the two components. Should have the same name.
+
+Characterization: ISSUE
+Must-fix
+
+
+**Design: Form of questions in the database
+
+Clarification about how the question attributes will be stored in the 
+database - whether simply as a word describing the question ("leaves") or
+as the whole question ("Does the plant have broad or narrow leaves?"). 
+Should work with component 3 to ensure that the attributes are stored the
+same way.
+
+Characterization: QUESTION
+Must-fix
+
+
+**Design: KeyTriple constructor's visibility
+
+Changing the constructor of the KeyTriple class to be private instead of public,
+as component 1 is the only class that should be making new instances of KeyTriples.
+Component 2 simply accesses them.
+
+Characterization: Issue
+Should-fix
+
+
+**Design: Cleanup after finishing
+
+Talked about needing to clean up after the component finishes, but realized that
+because we are implementing in Java, garbage collection is taken care of to
+free memory after usage.
+
+Characterization: Question
+Comment
+
+
+**Design: "Query" method from component 2
+
+Conflicting name with component 3's "Query" class. Component 1 and component 2
+will work to rename function (in component 2) and ensure that no conflicts arise
+during calls to either.
+
+Characterization: Issue
+Must-fix
+
+
+**Testing: Passing a question with no answer to component 3
+
+Issue brought up of an association which had a question but no answer contained. Turned out to be something that component 3 handles when checking the list of
+attributes, so not dealt with in component 1.
+
+Characterization: Question
+Comment
+
+
+OVERALL
+
+Component is approved with changes. Main issues were clarifications about
+interaction between components, and once those are solidified the design plan is
+well laid out and ready for implementation.
+

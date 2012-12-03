@@ -1,0 +1,82 @@
+﻿Team: Floradex
+Final Component 2 Test Plan
+Last updated 12/2/2012
+ 
+
+GENERAL OVERVIEW
+
+
+This component takes in Node Values from component 1, displays their contents to the
+user in a window, and returns the user's choice of LEFT, RIGHT, or SKIP to component
+1. The functionality that needs to be tested is 1) incorrect data passed to the
+component is handled elegantly, 2) the correct choice is passed back to component 1 
+based on what the user picked, and 3) that the buttons in the user window display work
+correctly.
+
+
+TEST CASE INDEX
+
+Black Box
+   Passed correct input
+      Return correct user choice
+   Passed incorrect input
+      Exit program without crashing
+White Box
+   Display window correctly
+
+
+TESTING FRAMEWORK
+
+
+UISpec4J is an open source GUI testing library for Swing, which is the library being
+used in this component. It can simulate user interaction with a Java GUI to do
+automatic testing on the component.
+
+
+BLACK BOX TEST CASES
+
+**Passed a correct input
+  Return correct choice from user
+
+Requirement: Must return the correct choice from the user to component 1 (as in, if
+   they choose the LEFT button, then LEFT should be the information passed back).
+
+Justification: Without correctly working buttons, the choices from the user have no    meaning and they won’t be getting correct information from the application.
+
+Setup/Testing: Three different tests - LEFT, RIGHT, and SKIP. After being passed a    correct Node Value and setting up the window, make one of the choices and click it.    After, assert that the value to be passed out matches the one of the button that was    just pressed.
+
+Correctness: Button pressed matches the output that will be passed to component 1.
+
+
+**Passed an incorrect input
+  Error if passed incorrect input
+
+Requirement: If passed an invalid input, should be handled by the component rather than
+   crashing.
+
+Justification: There shouldn’t be unexpected behavior, even if passed incorrect input,    so make sure that the component can deal with problems passed on from the other    components.
+
+Setup/Testing: Using an invalid input (Not a KeyTriple; Missing values in the KeyTriple    (empty strings)), the nextNode string to be passed to component 1 should be set to an
+   error message. When passed back to component 1, that component will recognize that the
+   message is not "LEFT", "RIGHT", or "SKIP" and handle the error.
+
+Correctness: Assertion that nextNode string is changed to an error message, not a valid
+   value to be passed back to component 1. 
+
+
+
+WHITE BOX TEST CASES
+
+**Display information correctly
+
+Requirement: Must correctly display the information passed from component 1 to the    user in the user interaction window
+
+Justification: If the information is not displayed correctly, the user will not be   able to understand what question they are answering or what answers they could give.
+
+Setup/Testing: After being passed a correct KeyTriple and the user window has been       updated, checks must be made on the pieces of the window to ensure consistency and
+   correct values to display. There will be assertions based on: window size, button
+   size, and question and button text.
+
+Correctness: Sizes are consistent with the expected results, and text matches the input
+   values being passed for display.
+

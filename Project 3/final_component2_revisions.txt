@@ -1,0 +1,25 @@
+Team: Floradex
+Component 2 revisions
+
+SPECS:
+-clarify that pictures ARE included in this component. was in specs but was accidentally left out of the remaining portions
+-clarify that component 1 passes a node's VALUE, not the node itself
+-"binary search tree" -> "search tree" since not really binary, as values aren't 
+   really comparable...
+-remove requirement that it is "easy and clear to use" - not quantifiable. changed 
+   to consistancy for the readability.
+
+DESIGN:
+-Added leftPicture and rightPicture as variables
+-Changed all variables except for nextNode to private, as they will only be
+   accessed in this class
+-Changed portions with "NodeValue" to have "KeyTriple".
+-removed main() method, as it is not handled in this class - should be done in
+   the overarching method that controls all four components.
+-Added closeWindow method to be used by the overarching control method.
+-Clarified reason for actionEvent vs. clicked methods.
+
+TESTING:
+-changed incorrect input passed from "exiting" to "error"
+-changed from NodeValue to KeyTriple
+-clarify and expand the testing for the correct information display test 

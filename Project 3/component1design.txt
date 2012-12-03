@@ -16,9 +16,11 @@ to get BinaryTree, Node, Association, List
 Need to import Java's io library for BufferedReader, FileReader, Scanner
 
 Provides a structure for the data stored in each node of the binary
-tree to allow easier access to each individual part (question, left answer, etc). Used by Components 1 and 2 (when Component 1 passes the node value to Component 2)
+tree to allow easier access to each individual part (question, left answer, etc).
+This has a private constructor because Component 1 is the only one that should be
+creating KeyTriples. Component 2 will only be using the accessor methods.
 
-public class KeyTriple{
+private class KeyTriple{
        * variables:
 		* question (String): the question associated with this
 		(for example, "Does the plant have broad or narrow
@@ -61,7 +63,7 @@ private BinaryTree<KeyTriple> readFileHelper(BufferedReader reader){
 	* text in file should be formatted in such a way that each
 	line contains the question, answers, and names of image files,
 	separated by specific tokens so that we can parse out the data
-	from each line
+	from each line. 
 	* if there's an indication that the line is not a leaf, return
 	a tree with the value from the line and call this method again
 	for each of the children
@@ -88,19 +90,27 @@ public List<Association<String, String>> traverse(BinaryTree<KeyTriple> tree){
 	* done (Boolean): whether or not we're finished traversing the
     	tree
 	* characteristicsList(List<Association<String, String>>): the
-    	list of characteristics of the plant which will be used by
-    * Component 3 to search the database 
+    	list of characteristics of the plant which will be used by 
+	Component 3 to search the database. 
     	* set finger to the root of the tree
     * set done to false
     while(!done){ //user has not yet reached a leaf or elected to skip
 	* send the value of the current node to Component 2, using the
-	query method, which will return "LEFT", "RIGHT", or "SKIP"
-	* variable result(String) stores the result of the call to query
+	query method defined in Component 2, which will return "LEFT", "RIGHT", 
+	or "SKIP"
+	Note: the query method may not actually be called "query," as we want to be
+	sure that it doesn't conflict with the name of the method Component 3 uses
+	to search the database. However, we will refer to it as query here for
+	understandability.  
+	* variable result(String) stores the result of the call to query method
 	if(result == "SKIP") then set done to true
 	else{
 		* variable plantChar(Association<String, String>): the
     		key will be the question associated with current node, the value
-    		will be the answer the user has chosen
+    		will be the answer the user has chosen. Note: the database should 
+		have field names that directly correspond to the questions in the 
+		dichotomous key so that the association of question and answer can
+		be easily used by Component 3 in a database search. 
 		* push plantChar onto characteristicsList
 		* update finger to appropriate child of node (as
     		indicated by result)

@@ -3,34 +3,25 @@ Component 1-Tree Traversal
 General description & role in system:
  
 This is the component that actually goes through each step of the dichotomous 
-key 
-by traversing the binary tree representation of the key. It compiles a list of 
+key by traversing the binary tree representation of the key. It compiles a list of 
 characteristics that the user has indicated the plant has, which is used later 
-to 
-search for partial results. If the user doesn't skip to the end at any point, 
-then they 
-will also get the "official" (as sanctioned by whatever dichotomous key we end 
-up 
-adapting) match for their plant.
+to search for partial results. If the user doesn't skip to the end at any point, 
+then they will also get the "official" (as sanctioned by whatever dichotomous key we end 
+up adapting) match for their plant.
 
 External interfaces:
 
 The tree traversal component reads in a text file representation of the 
-dichotomous 
-key to convert into a binary tree.  The component will communicate with the 
-display 
-component (Component 2) by sending the information stored at each node in the 
+dichotomous key to convert into a binary tree.  The component will communicate with the 
+display component (Component 2) by sending the information stored at each node in the 
 tree and receiving the user's choice of how to proceed (right, left, or skip). 
-When the 
-traversal has hit a leaf or been told to skip, the component will send a list of 
-associations of questions and answers to the search results component (Component 
-3).
+When the traversal has hit a leaf or been told to skip, the component will send a list of 
+associations of questions and answers to the search results component (Component 3).
 
 Requirements:
 
 1) Must read in text file representation of dichotomous key in a specific format 
-and 
-correctly convert it into a binary tree
+and correctly convert it into a binary tree
    1a) The value of the leaves of the tree should be the name of the plant that 
        matches all of the previous answers.
 2) Each node of the tree must contain the necessary information for the display 

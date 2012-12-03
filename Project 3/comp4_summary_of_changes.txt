@@ -1,0 +1,41 @@
+Component 4 Summary of Changes
+Author: Siyao Xie
+
+Spec:
+
+Revised specification and removed the part about formatting factsheets.
+Reason: After discussing with the group, decided including formatting factsheets will make the project too big to finish on schedule. Will push off to version 2. Updated to be consistent with design and test plan.
+
+Added requirements about error handling.
+Reason: Must fix from review. To be consistent with design and test plan.
+
+Design:
+
+Added details about declaring buttons to clarify.
+Reason: Question raised about declaring instance variables for display during review.
+
+Declared slider for scrolling and added cases about scrolling in ActionPerformed method.
+Reason: Did not mention scrolling in design despite it being part of the specification. To be consistent with spec and test plan.
+
+Further clarified about displaying factsheet in a new window.
+Reason: A question was raised about it during review.
+
+Added comments about error handling.
+Reason: Must fix from review. To be consistent with design and test plan.
+
+
+Test:
+
+Replaced requirement about visually pleasing to be something more specific.
+Reason: To quantify visually pleasing and make it testable.
+
+Edited Unaccessible Thumbnail Test to use a placeholder image instead of a default image.
+Reason: Default image could potentially be unaccesible. Placeholder image drawn by Jframe is more reliable.
+
+Edited correctness for scrolling test to assert slider knob position.
+Reason: The test needs to be automated.
+
+Added assertions for all test cases.
+Reason: It was not clear how I use the assertion function in UISpec4J to test automatically.
+
+

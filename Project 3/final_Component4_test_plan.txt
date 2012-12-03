@@ -1,4 +1,4 @@
- Component 4 Test Plan
+ Component 4 Final Test Plan
  Siyao Xie
 
  Functionality Overview:

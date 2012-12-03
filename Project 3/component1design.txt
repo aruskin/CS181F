@@ -69,6 +69,8 @@ private BinaryTree<KeyTriple> readFileHelper(BufferedReader reader){
 	for each of the children
 	* else if there's an indication that the line is a leaf,
 	return a tree with the value from the line and no children
+	* this method will need to handle errors parsing the files (for
+	example, dealing with an input file of the incorrect format)
 }
 
 Actual method to convert file to binary tree, takes in name of file to
@@ -78,6 +80,8 @@ public BinaryTree<KeyTriple> fileToTree(String filename){
        * create a BufferedReader whose input is a FileReader for the
        filename indicated
        * call readFileHelper on that BufferedReader
+       * this method will need to handle errors in opening the file (for
+	example, if filename refers to file that doesn't exist)
 }
 
 Method to traverse tree based on user input, takes in a binary tree
@@ -94,15 +98,16 @@ public List<Association<String, String>> traverse(BinaryTree<KeyTriple> tree){
 	Component 3 to search the database. 
     	* set finger to the root of the tree
     * set done to false
+    * if tree is empty, throw an exception, since won't have anything
+      to traverse
+	
     while(!done){ //user has not yet reached a leaf or elected to skip
 	* send the value of the current node to Component 2, using the
-	query method defined in Component 2, which will return "LEFT", "RIGHT", 
-	or "SKIP"
-	Note: the query method may not actually be called "query," as we want to be
-	sure that it doesn't conflict with the name of the method Component 3 uses
-	to search the database. However, we will refer to it as query here for
-	understandability.  
-	* variable result(String) stores the result of the call to query method
+	userQuery method defined in Component 2, which will return "LEFT", "RIGHT", 
+	or "SKIP" 
+	    * if userQuery returns anything other than "LEFT," "RIGHT," or "SKIP,"
+	    throw an exception, as will not be able to keep traversing
+	* variable result(String) stores the result of the call to userQuery method
 	if(result == "SKIP") then set done to true
 	else{
 		* variable plantChar(Association<String, String>): the

@@ -55,7 +55,9 @@ correct format to be read in and that whoever changes it follows that format and
 the database as appropriate.
 Testing: Create text files in the expected format, and create a binary tree representation 
 of the files manually to be the expected result. Compare the result from the component's 
-file to tree function to the expected result.
+file to tree function to the expected result. Note: for different cases, will try to convert keys
+with only one plant (should just be a single leaf), with only one question (should be a node 
+with two leaves), and balanced and unbalanced trees.
 Correctness: If testing the trees for equivalency returns true, then the program has 
 correctly converted from text file to binary tree.
 
@@ -111,7 +113,7 @@ Component 2 and run the traversal method.
 Correctness: The program should return the correct error message.
 
 6. Passing correct information to Component 2
-	Requirement: Must be able to send value to the display component at each node.
+Requirement: Must be able to send value to the display component at each node.
 Justification: This component needs to pass the question, answers, and names of image 
 files associated with the answers (i.e., the information necessary for Component 2 to set 
 up the display) to Component 2 at each node so that Component 2 can then get user 

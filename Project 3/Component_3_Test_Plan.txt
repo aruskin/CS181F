@@ -29,7 +29,7 @@ through by association.
 Justification:          This is an important function of this component.  If this component 
 cannot properly read in a list of associations and look them up in the database then none of the requirements can be met.
 Set-up/Correctness:  Pass this component a list of associations and query the database 
-for each association.  See if it returns a list of plants that match the given associations.  There is no special setup needed since this component will already be calculating the percentage match of the plants that it has queried to pick the top 10 matches.  If we pass this component a list of associations that we know specifically matches one plant, then our top match should have a 100% match and should appear at the front of our list.  We could further test this component by passing that same list of associations, except this time we change one of the associations so that we know we should be getting a smaller percentage match but the same plant should still be our top match.  That way, we have an idea of ascertaining the correctness since we already know what plants are in the database.
+for each association.  See if it returns a list of plants that match the given associations.  There is no special setup needed since this component will already be calculating the percentage match of the plants that it has queried to pick the top 10 matches.  If we pass this component a list of associations that we know specifically matches one plant, then our top match should have a 100% match and should appear at the front of our list.  We could further test this component by passing that same list of associations, except this time we change one of the associations so that we know we should be getting a smaller percentage match but the same plant should still be our top match.  That way, we have an idea of ascertaining the correctness since we already know what plants are in the database. This requires that we have a set of pre-made lists of associations where we know what plants the query should be returning from the database.  We can match our results with the expected output for correctness.
 
 
 White box testing:
@@ -39,7 +39,7 @@ White box testing:
 Justification: If you don’t have a complete valid list of associations, you can’t query the 
 database.  In other words, if you are passed the category “color” but the user’s answer isn’t passed with it, then I can’t search the database for that specific color.
 Set-up/Correctness: Test by passing in an incomplete list of associations.  The 
-component should handle the error by skipping the given association if it is not complete (i.e. if “color” is given but a specific color is not given) and should continue to calculate the matches based off of the other associations.  If none of them are complete, then the component should send a signal back to the previous components to prompt the user for questions again.
+component should handle the error by skipping the given association if it is not complete (i.e. if “color” is given but a specific color is not given) and should continue to calculate the matches based off of the other associations.  If none of them are complete, then the component should send a signal to the system to prompt a new dichotomous key search.
 
 
 3.  Requirement: Must read in a non empty valid list of associations.

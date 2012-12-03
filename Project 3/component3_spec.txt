@@ -16,8 +16,8 @@ The database search component takes in the list of associations of questions and
 Requirements:
 
 
--Must read in list of associations in a specific format (List<Association<String,String>>) for easy iteration to look up in the database
--Must have a working database that can be searched through by association
+-Must read in list of associations in a specific format (List<Association<String,String>>) for easy iteration to look up in the database; skipps association if it is incomplete/invalid
+-Must have a working database that can be searched through by association; throws an error if database is incomplete
 -Database must be large enough to be able to return plants that match the given associations (using a dummy database for this project) as well as their percentage match
--Must have the ability to look up each association within the database and return a list of plants that have that feature
--Must be able to return a list of top ten results and their associated matching percentages
+-Must have the ability to look up each association within the database and return a list of plants that have that feature; skips over an association if it has an error during the query
+-Must be able to return a list of top results that have a 50% match or higher and their associated matching percentages

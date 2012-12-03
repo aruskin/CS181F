@@ -45,7 +45,7 @@ component should handle the error by skipping the given association if it is not
 3.  Requirement: Must read in a non empty valid list of associations.
 Justification: If the list is empty, then we can’t query the database.
 Set-up/Correctness: Pass in an empty list.  The component should handle it by sending a 
-signal back to Component 1 to prompt the user for questions again.
+signal to the system to restart the dichotomous key search.
 
 
 4.  Requirement: Given associations in list must exist within database.

@@ -1,25 +1,32 @@
 Team: Floradex
-Component 2 revisions
+Final Component 2 Revisions
+Last updated 12/2/2012
 
 SPECS:
--clarify that pictures ARE included in this component. was in specs but was accidentally left out of the remaining portions
--clarify that component 1 passes a node's VALUE, not the node itself
--"binary search tree" -> "search tree" since not really binary, as values aren't 
-   really comparable...
--remove requirement that it is "easy and clear to use" - not quantifiable. changed 
-   to consistancy for the readability.
+**Clarified that pictures ARE included in this component. Was already in the specs but
+   was accidentally left out of the remaining portions. Went through and updated all
+   documents to reflect this specification.
+**Clarified that component 1 passes a node's VALUE, not the node itself.
+**Changed "binary search tree" -> "search tree" since not really a BST. An incorrect
+   vocabulary use.
+**Removed requirement that it is "easy and clear to use". This was not quantifiable.
+   Instead changed to consistancy of display within the window.
 
 DESIGN:
--Added leftPicture and rightPicture as variables
--Changed all variables except for nextNode to private, as they will only be
-   accessed in this class
--Changed portions with "NodeValue" to have "KeyTriple".
--removed main() method, as it is not handled in this class - should be done in
+**Added leftPicture and rightPicture as variables.
+**Changed all variables except for nextNode to private, as they will only be
+   accessed in this class.
+**Changed portions with "NodeValue" to have "KeyTriple".
+**removed main() method, as it is not handled in this class. It will be done in
    the overarching method that controls all four components.
--Added closeWindow method to be used by the overarching control method.
--Clarified reason for actionEvent vs. clicked methods.
+**Added closeWindow method to be used by the overarching control method to clean up
+   after window is done being used.
+**Clarified reason for actionEvent vs. clicked methods within the comments.
 
 TESTING:
--changed incorrect input passed from "exiting" to "error"
--changed from NodeValue to KeyTriple
--clarify and expand the testing for the correct information display test 
+**Changed incorrect input passed test from "exiting" to "error". This component does
+   not handle exiting the whole program - it simply needs to detect an error and pass
+   that information along.
+**Changed from NodeValue to KeyTriple.
+**Clarified and expanded the testing for the correct information display test based on
+   the tests proposed for component 4.  

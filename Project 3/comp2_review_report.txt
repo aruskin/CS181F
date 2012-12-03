@@ -1,0 +1,79 @@
+Team: Floradex
+Component 2 Review Report
+
+4:45 PM
+December 2, 2012
+Attendees: Skyler Lipscomb, Robin Momii, Amy Ruskin, Siyao Xie
+
+Specifications:
+
+Minor linguistic clarification: The specification states  "Component 1 initially sends a 
+node of the search tree." Component 1 should be passing the value of a node, not a 
+literal node, and the use of the phrase "search tree" might imply that we're using a 
+binary search tree type rather than a binary tree. 
+Characterization: QUESTION
+SHOULD-FIX
+
+
+Design:
+
+KeyTriple vs NodeValue: Component 1 and Component 2 use inconsistent naming 
+schemes for the type that is used as the value of the nodes of the binary tree. In the 
+meeting, we decided on KeyTriple as the official name.
+Characterization: ISSUE
+MUST-FIX
+
+Clean-up: Clarification that windows will be closed after use so that they're not still 
+running in the background.
+Characterization:  QUESTION
+SHOULD-FIX
+
+Methods actionPerformed vs clicked: The differences between and specific roles of 
+the two methods are currently ambiguous.
+Characterization: QUESTION
+SHOULD-FIX
+
+Displaying pictures: Inconsistencies between the specification (which mentions 
+displaying pictures) and the design (which does not). Author should decide whether 
+displaying pictures is feasible in this version and change the documentation 
+accordingly. 
+Characterization: ISSUE
+MUST-FIX
+
+Error-handling cases: The test plan refers to error handling practices that are not 
+mentioned in either the design or specification.
+Characterization: ISSUE
+MUST-FIX
+Instance variables: We were unsure whether button and display objects should be 
+declared as instance variables.  If it turns out that they should be, author may want 
+to add them to design.
+Characterization: QUESTION
+COMMENT
+
+
+Test Plan: 
+
+Usability testing: Test plan currently mentions "easy to read" as a requirement. 
+There is not an automated way of measuring this, so may want to remove from test 
+plan.
+Characterization: QUESTION
+SHOULD-FIX
+
+Max characters: We discussed the cases in which Component 2 is passed strings that 
+are too long to display, but were unsure how to resolve this issue.
+Characterization: QUESTION
+COMMENT
+
+Error-handling correctness: We discussed whether or not the component's current 
+expected approaches to handling errors were ideal. More detailed rationale of why 
+the component's way of handling errors is correct may be useful.
+Characterization: QUESTION
+SHOULD-FIX
+
+
+Conclusion:
+
+Ultimately, most of the issues that were found were either ambiguous language or 
+inconsistencies between documents. The fixes should thus consist of only a few 
+clarifications and minor changes in terminology. Therefore, the component was 
+approved with changes.

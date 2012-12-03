@@ -1,11 +1,13 @@
 Reviewer: Siyao Xie
 Component 3 Review Notes
 
+5:00 pm
+
 Spec:
 - returning the top 10 results? What if there aren't enough results? What if most of them only 
 match with one of the attributes? What if there are draws, how should we decide which goes into 
 the top 10?
-- clarification: is the database part of component 2 or it is assumed to be ready outside of 
+- clarification: is the database part of component 3 or it is assumed to be ready outside of 
 component 2?
 
 Design:

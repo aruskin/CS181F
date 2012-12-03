@@ -1,6 +1,6 @@
 /*
  * TEAM: Floradex
- * COMPONENT 4 DESIGN
+ * COMPONENT 4 Final DESIGN
  * OWNER: Siyao Xie
  * 
  * Component 4 displays the search results returned by Component 3 as well as 
@@ -29,14 +29,22 @@ import java.awt.event.*;
 class resultsPage extends JFrame implements ActionListener {
   
   // Note: this is the list of strings of search results returned by Component 3
-  public List<string> results;
+  // the first string will be a plant's name and the second string will be its percentage match
+  public List<Assocation<String, String>> results;
 
   
   /* Creating a user interface window. 
-   * This will create the frame and add a button for each plant from the results list
+   * This will create the frame (including a slider) and add a button for each plant 
+   * from the results list.
+   * Will display an error message if no result is returned (or returned 0 result).
    * The methods to perform these actions are all in the JFrame and Event libraries.
    */
-  public void resultsPage() { 
+  public void resultsPage() {
+    // if (results.size() > 0)
+    //  setting up buttons
+    //  for (i = 0; i < results.size(), ++i)
+    //    JButton button1 = new JButton(results[i].first, results[i].first.jpg);
+    // else display error message
   }
   
   
@@ -44,6 +52,8 @@ class resultsPage extends JFrame implements ActionListener {
    * then open a new window displaying the according factsheet
    */
   public void actionPerformed(ActionEvent event) {
+    // Case: keyboard input "UP", resultsPage scroll up
+    // Case: keyboard input "DOWN", resultsPage scroll down
     // Case: plant1 button, display factSheet(plant1)
     // Case: plant2 button, display factSheet(plant2)
     // Case: plant3 button, display factSheet(plant3)
@@ -60,22 +70,23 @@ class resultsPage extends JFrame implements ActionListener {
   
 }
 
-// creates factSheet using the passed in plantName
+// display the corresponding factSheet using the passed in plantName in a new window
 class factSheet extends JFrame {
   
-  /* read in the plant description from the file (plantName.txt) stored in a local folder
-   * and return a string containing the description
-   */
-   public string readFromFile(plantName) {
-   }
-
   /* Creating a user interface window. 
-   * This will create the frame and add image (plantName.jpg), add JTextarea(description).
+   * This will create the frame and add the factsheet(plantNameFactsheet.jpg) to display.
+   * Will display an error message if the factsheet is not accessible.
    * The methods to perform these actions are all in the JFrame.
    */
-  public void factSheet(plantName) { 
+  public void factSheet(plantName) {
+    } 
   }
 
 }
 
+
+
+// update about error handling
+// a button to restart
+// instance variable
 

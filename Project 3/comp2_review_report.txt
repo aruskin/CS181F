@@ -44,6 +44,7 @@ Error-handling cases: The test plan refers to error handling practices that are 
 mentioned in either the design or specification.
 Characterization: ISSUE
 MUST-FIX
+
 Instance variables: We were unsure whether button and display objects should be 
 declared as instance variables.  If it turns out that they should be, author may want 
 to add them to design.

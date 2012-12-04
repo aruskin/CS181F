@@ -1,0 +1,76 @@
+﻿Post-Mortem Report
+
+
+During the post-mortem for our Project 3 (Component specs/design/test), we discussed the positives and negatives in Project 3 and proposed solutions and suggestions for improvement. The discussion went as follows:
+
+
+1. We ran through the list of discussion points mentioned on the CS181F website and talked about what went well and what didn’t work.
+2. The moderator made sure we got feedback from all members of the group.  Feedback included questions, comments, and suggestions for future projects.
+3. We then discussed solutions for the questions raised so that we may avoid these 
+issues in the future.
+
+
+The positives:
+
+
+Architectural refinement and specification development.
+1. Stayed on schedule for this part
+2. Everyone helped each other when it came to defining the specs
+3. Split components into reasonably sized pieces (roughly the same size) that are feasible
+Development of the component designs.
+1. All of the designs seem feasible to implement and meet the specifications
+2. Don’t think we left out any major portion of the functionality that we had planned on in the specs
+Development of the test plans.
+1. Test plans all seem thorough
+2. Even though none of us had written a test plan before, we still did a good job
+3. Siyao & Skyler learned how to use automatic GUI testing, which they thought wasn’t feasible at the start of the project
+The review process and the resulting design/plan changes.
+1. Reviews went well -- reviewers were thorough and stayed on topic
+2. It was helpful to get clarification about the interactions between components
+3. Everyone revised their components after the feedback from the review
+4. Everyone was very respectful which resulted in good discussions between members about what we should work on
+The planning and ongoing management of these activities.
+1. Everyone was flexible with moving deadlines and accommodated for members who needed more time
+The overall project as an educational exercise.
+1. Learned about the importance of pseudocoding
+2. Learned test-driven design
+3. Doing the internal design review was nice because we knew how to do it well and respectfully from the previous ones we did with the other groups
+
+
+The negatives:
+
+
+Architectural refinement and specification development.
+1. Should have thought more about feasibility of search algorithm for Component 3
+2. It would have been good to look for resources (books, people, web tutorials) to help learn the new materials much earlier so it didn’t get pushed to the end
+3. We should have thought about framework for integration of the components and maybe had that as a separate component
+4. Should have thought about the search algorithm more thoroughly before moving on to the design/test plan
+Development of the component designs.
+1. We should have communicated more to ensure that interactions between components were consistent
+2. Not everyone is comfortable with Java so made it difficult to figure out method calls and variable types that should be used
+3. We should have considered error handling during this part
+Development of the test plans.
+1. We did not stick to the schedule because of Thanksgiving, and the fact that we didn't really know what we were doing
+2. There was some difficulty figuring out which component should handle different types of errors
+The review process and the resulting design/plan changes.
+1. Ideally, we would have had more time between reviews and final changes
+2. There were some issues that probably should have been discussed prior to the review
+3. We should have had more time after to do revisions
+4. It was difficult to figure out problems with other components design because some of us are doing GUI and others are doing internal parts
+The planning and ongoing management of these activities.
+1. Due to Thanksgiving break/retreat/general business, we didn’t put as much energy into the planning/ongoing management as we should have
+2. We should have looked more carefully at what each section required before making the schedule
+3. We should have tried to push things earlier to leave time for revisions
+The overall project as an educational exercise.
+1. We should have had more time for this project and didn’t need as much time on project 1
+
+
+
+
+Proposed solutions and improvements suggestions:
+
+
+1. Being more firm with deadlines
+2. Planning ahead better (i.e. consider error handling earlier)
+3. Have the deadlines compensate for holidays (i.e. Thanksgiving)
+4. Improve pseudo coding skills in order to make code more clear and concise

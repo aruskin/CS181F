@@ -10,12 +10,27 @@ public class TreeTraversal {
 	 * because this component is the only one that should be creating
 	 * KeyTriples.
 	 */
-	private class KeyTriple{}
+	private class KeyTriple{
+		private String question;
+		private Association<String, String> left;
+		private Association<String, String> right;
+		public KeyTriple(String q, String lftAns, String lftImg, 
+				String rgtAns, String rgtImg){
+			question = q;
+			left = new Association(lftAns, lftImg);
+			right = new Association(rgtAns, rgtImg);			
+		}
+		public KeyTriple(String a){
+			question = a;
+			left = new Association("","");
+			right = new Association("","");
+		}
+	}
 	
 	/* Helper method for converting file to binary tree; recursively
 	 * creates nodes based on lines from text file.
 	 */
-	private static BinaryTree<KeyTriple> readFileHelper(BufferedReader reader){
+	private BinaryTree<KeyTriple> readFileHelper(BufferedReader reader){
 		
 		//stores the current line of the file
 		String line = null;
@@ -32,16 +47,18 @@ public class TreeTraversal {
 			 * so return tree with value from this line and call
 			 * method again for each of the children
 			 */
-			
-			//parse line into q, left, right
-			return null; //want to return tree
+			String[] subStrings = line.split("*"); //parses line into question and answers
+			return new BinaryTree<KeyTriple>
+			(this.new KeyTriple(subStrings[0].substring(1), subStrings[1], 
+					subStrings[2], subStrings[3], subStrings[4]), 
+					readFileHelper(reader), readFileHelper(reader)); 
+		
 		}else if(line.startsWith("A")){
 			/* There's an indication that the line is a leaf, so
 			 * return a tree with the value from the line and no
 			 * children.
 			 */
-			//create leaf
-			return null; //want to return tree
+			return new BinaryTree<KeyTriple>(this.new KeyTriple(line.substring(1)));
 		}else{
 			// Indication that input file is in incorrect format.
 			throw new RuntimeException("fileToTree: file parse error");
@@ -55,7 +72,7 @@ public class TreeTraversal {
 	 * @param filename is the name of the file to be converted
 	 * @return the binary tree representing the file
 	 */
-	public static BinaryTree<KeyTriple> fileToTree(String filename){
+	public BinaryTree<KeyTriple> fileToTree(String filename){
 		try{
 			// readFileHelper will recursively create tree, using BufferedReader
 			// to read in input file line by line.
@@ -66,9 +83,4 @@ public class TreeTraversal {
 			throw new RuntimeException("Problems reading file: " + filename +"\n" + e);
 		}
 	}
-	
-	
-	
-	
-
 }

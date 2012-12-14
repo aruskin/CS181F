@@ -87,7 +87,7 @@ public class TreeTraversalTest {
 		}	
 	}
 	
-	@Test
+	//@Test
 	/*
 	 * 3. Traversing the tree (stopping at leaves)
 	 * Requirement: Must correctly traverse tree based on user input and
@@ -95,14 +95,22 @@ public class TreeTraversalTest {
 	 * the correct information and be in the correct format to be used by
 	 * Component 3.
 	 */
-	public void testTraverseStopAtLeaves(){}
+	//public void testTraverseStopAtLeaves(){}
 	
 	@Test
 	/* 7. Accessor methods for KeyTriple work correctly
 	 * Requirement: The accessor methods for KeyTriple should return the 
 	 * correct types and correct elements of the class.
 	 */
-	public void testKeyTriple(){}
+	public void testKeyTriple(){
+		KeyTriple testKey1 = new KeyTriple("question", "leftAns", "leftImg",
+											"rightAns", "rightImg");
+		assertEquals("question", testKey1.getQuestion());
+		assertEquals("leftAns", testKey1.getLeftAnswer());
+		assertEquals("leftImg", testKey1.getLeftImage());
+		assertEquals("rightAns", testKey1.getRightAnswer());
+		assertEquals("rightImg", testKey1.getRightImage());
+	}
 	
 	@Test
 	/*

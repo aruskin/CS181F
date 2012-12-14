@@ -18,7 +18,10 @@ public class KeyTriple{
 	}
 	public KeyTriple(String a){
 		question = a;
-		left = new Association("","");
-		right = new Association("","");
+		left = new Association("NOTHING","NOTHING");
+		right = new Association("NOTHING","NOTHING");
+	}
+	public String toString(){
+		return "(" + question + "," + left.toString() + "," + right.toString() + ")";
 	}
 }

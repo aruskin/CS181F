@@ -4,8 +4,8 @@ import structure5.*;
 import org.junit.Test;
 import org.junit.Before;
 
-
 public class TreeTraversalTest {
+	
 	private TreeTraversal tester; //instance of TreeTraversal class to run tests on
 	private BinaryTree<KeyTriple> fakeKey; //tree representation of key that we will
 										   // use for several of the tests
@@ -15,28 +15,37 @@ public class TreeTraversalTest {
 		tester = new TreeTraversal();
 		
 		//build tree to use as our input for traversal tests
-		BinaryTree<KeyTriple> right = new BinaryTree(new KeyTriple("Second right question?", 
-				"left 2r", "leftimg2r.gif",
-				"right 2r", "rightimg2r.gif"),
-				new BinaryTree(new KeyTriple("Answer D")),
-				new BinaryTree(new KeyTriple("Answer E")));
+		BinaryTree<KeyTriple> right = new BinaryTree<KeyTriple>
+										(new KeyTriple("Second right question?", 
+													"left 2r", "leftimg2r.gif",
+													"right 2r", "rightimg2r.gif"),
+										new BinaryTree<KeyTriple>
+											(new KeyTriple("Answer D")),
+										new BinaryTree<KeyTriple>
+											(new KeyTriple("Answer E")));
 
-		BinaryTree<KeyTriple> lright =  new BinaryTree(new KeyTriple("Third lr question?", 
-					"left 3lr", "leftimg3lr.gif",
-					"right 3lr", "rightimg3lr.gif"),
-					new BinaryTree(new KeyTriple("Answer B")),
-					new BinaryTree(new KeyTriple("Answer C")));
+		BinaryTree<KeyTriple> lright =  new BinaryTree<KeyTriple>
+											(new KeyTriple("Third lr question?", 
+													"left 3lr", "leftimg3lr.gif",
+													"right 3lr", "rightimg3lr.gif"),
+											new BinaryTree<KeyTriple>
+												(new KeyTriple("Answer B")),
+											new BinaryTree<KeyTriple>
+												(new KeyTriple("Answer C")));
 
-		BinaryTree<KeyTriple> left = new BinaryTree(new KeyTriple("Second left question?", 
-				"left 2l", "leftimg2l.gif",
-				"right 2l", "rightimg2l.gif"),
-				new BinaryTree(new KeyTriple("Answer A")),
-				lright);
+		BinaryTree<KeyTriple> left = new BinaryTree<KeyTriple>
+										(new KeyTriple("Second left question?", 
+														"left 2l", "leftimg2l.gif",
+														"right 2l", "rightimg2l.gif"),
+										new BinaryTree<KeyTriple>
+											(new KeyTriple("Answer A")),
+										lright);
 		
-		fakeKey = new BinaryTree(new KeyTriple("First question?",
-					"left 1", "leftimg1.gif", 
-					"right 1", "rightimg1.gif"),
-					left, right);
+		fakeKey = new BinaryTree<KeyTriple>(new KeyTriple("First question?",
+													"left 1", "leftimg1.gif", 
+													"right 1", "rightimg1.gif"),
+											left,
+											right);
 	}
 
 	@Test
@@ -47,25 +56,32 @@ public class TreeTraversalTest {
 	public void testFileToTreeGoodInput() {
 		
 		//build simple tree with two leaves to test equivalency against
-		BinaryTree<KeyTriple> testTree1 = new BinaryTree(new KeyTriple("First question?",
-											"left", "leftimg.gif",
-											"right", "rightimg.gif"), 
-											new BinaryTree(new KeyTriple("Answer A")),
-											new BinaryTree(new KeyTriple("Answer B")));
+		BinaryTree<KeyTriple> testTree1 = new BinaryTree<KeyTriple>
+											(new KeyTriple("First question?",
+													"left", "leftimg.gif",
+													"right", "rightimg.gif"), 
+											new BinaryTree<KeyTriple>
+												(new KeyTriple("Answer A")),
+											new BinaryTree<KeyTriple>
+												(new KeyTriple("Answer B")));
 		
 		//toString makes sure that we're just testing to see if the trees contain the
 		//same values, rather than that the trees are the same object
-		assertEquals(testTree1.toString(), tester.fileToTree("src/test01.tree").toString());
+		assertEquals(testTree1.toString(), 
+					tester.fileToTree("src/test01.tree").toString());
 		
 		//a slightly more complicated tree to test equivalency against
 		BinaryTree<KeyTriple> testTree2 = fakeKey;
 		
-		assertEquals(testTree2.toString(), tester.fileToTree("src/test02.tree").toString());
+		assertEquals(testTree2.toString(), 
+					tester.fileToTree("src/test02.tree").toString());
 		
 		//build tree with only one leaf to test equivalency
-		BinaryTree<KeyTriple> testTree3 = new BinaryTree(new KeyTriple("Answer A"));
+		BinaryTree<KeyTriple> testTree3 = new BinaryTree<KeyTriple>
+												(new KeyTriple("Answer A"));
 		
-		assertEquals(testTree3.toString(), tester.fileToTree("src/test03.tree").toString());
+		assertEquals(testTree3.toString(), 
+					tester.fileToTree("src/test03.tree").toString());
 	}
 	
 	@Test
@@ -110,26 +126,30 @@ public class TreeTraversalTest {
 		//the expected list of characteristics, given testTree and testInput1
 		Queue<Association<String, String>> resultsList1 = 
 						new QueueVector<Association<String, String>>();
-		resultsList1.add(new Association
+		resultsList1.add(new Association<String, String>
 					("First question?", "right 1"));
-		resultsList1.add(new Association
+		resultsList1.add(new Association<String, String>
 					("Second right question?", "right 2r"));
-		resultsList1.add(new Association
+		resultsList1.add(new Association<String, String>
 					("Name", "Answer E"));
 
 		assertEquals(resultsList1.toString(), 
 				tester.traverse(fakeKey).toString());
 		
-		
+		//same set up as above with different input
 		String[] testInput2 = {"LEFT", "RIGHT", "LEFT"};
 		tester.setComponent2Input(testInput2);
 		
 		Queue<Association<String, String>> resultsList2 = 
 				new QueueVector<Association<String, String>>();
-		resultsList2.add(new Association("First question?", "left 1"));
-		resultsList2.add(new Association("Second left question?", "right 2l"));
-		resultsList2.add(new Association("Third lr question?", "left 3lr"));
-		resultsList2.add(new Association("Name", "Answer B"));
+		resultsList2.add(new Association<String, String>
+					("First question?", "left 1"));
+		resultsList2.add(new Association<String, String>
+					("Second left question?", "right 2l"));
+		resultsList2.add(new Association<String, String>
+					("Third lr question?", "left 3lr"));
+		resultsList2.add(new Association<String, String>
+					("Name", "Answer B"));
 		
 		assertEquals(resultsList2.toString(), 
 				tester.traverse(fakeKey).toString());		
@@ -143,11 +163,14 @@ public class TreeTraversalTest {
 	 * to be used by Component 3.
 	 */
 	public void testTraverseSkipping(){
-		String[] testInput1 = {"LEFT", "SKIP"};
+		String[] testInput1 = {"LEFT", "SKIP"}; //simulate user input
 		tester.setComponent2Input(testInput1);
+		
+		//expected list of characteristics
 		Queue<Association<String, String>> resultsList1 = 
 				new QueueVector<Association<String, String>>();
-		resultsList1.add(new Association("First question?", "left 1"));
+		resultsList1.add(new Association<String, String>
+					("First question?", "left 1"));
 		
 		assertEquals(resultsList1.toString(),
 				tester.traverse(fakeKey).toString());		

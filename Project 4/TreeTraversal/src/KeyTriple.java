@@ -21,6 +21,11 @@ public class KeyTriple{
 		left = new Association("NOTHING","NOTHING");
 		right = new Association("NOTHING","NOTHING");
 	}
+	public String getQuestion(){}
+	public String getLeftAnswer(){}
+	public String getLeftImage(){}
+	public String getRightAnswer(){}
+	public String getRighImage(){}
 	public String toString(){
 		return "(" + question + "," + left.toString() + "," + right.toString() + ")";
 	}

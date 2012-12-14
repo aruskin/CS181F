@@ -89,6 +89,23 @@ public class TreeTraversalTest {
 	
 	@Test
 	/*
+	 * 3. Traversing the tree (stopping at leaves)
+	 * Requirement: Must correctly traverse tree based on user input and
+	 * stop traversing when it hits a leaf. The returned list must contain
+	 * the correct information and be in the correct format to be used by
+	 * Component 3.
+	 */
+	public void testTraverseStopAtLeaves(){}
+	
+	@Test
+	/* 7. Accessor methods for KeyTriple work correctly
+	 * Requirement: The accessor methods for KeyTriple should return the 
+	 * correct types and correct elements of the class.
+	 */
+	public void testKeyTriple(){}
+	
+	@Test
+	/*
 	 * 8. Non-existent file passed in as parameter to fileToTree method
 	 * Requirement: Only valid files should be used as input; if an invalid
 	 * file name is passed in, we should return an error message.

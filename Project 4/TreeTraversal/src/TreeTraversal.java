@@ -1,6 +1,5 @@
 import java.io.*;
-import structure5.BinaryTree;
-import structure5.Association;
+import structure5.*;
 
 public class TreeTraversal {
 	
@@ -65,5 +64,40 @@ public class TreeTraversal {
 			// Error handling for invalid input files.
 			throw new RuntimeException("Problems reading file: " + filename);
 		}
+	}
+	
+	/*
+	 * Method to traverse tree based on user input, takes in a binary tree with
+	 * dichotomous key data, returns list of characteristics indicated by the 
+	 * user.
+	 */
+	public Queue<Association<String, String>> traverse(BinaryTree<KeyTriple> tree,
+														FakeComponent2 comp2){
+		BinaryTree finger = tree; //node we're currently considering
+		Boolean done = false; //whether or not we're finished traversing the tree
+		Queue<Association<String, String>> characteristicsList =
+				new QueueVector<Association<String, String>>();
+		if(tree.isEmpty()){ //so there's nothing to traverse
+			throw new RuntimeException("traverse: passed an empty tree");
+		}
+		
+		while(!done){ //user has not yet reached leaf or elected to skip
+			//send value of current node to Component 2
+			String result = comp2.userQuery(tree.value());
+			Association<String, String> plantChar;
+			if(result == "SKIP"){
+				done = true;
+			}
+			else if(result == "LEFT"){
+				//need accessor methods for KeyTriple before we can proceed further. 
+			}
+			else if(result == "RIGHT"){
+				//same...
+			}
+			else{
+				throw new RuntimeException("traverse: received invalid user input");
+			}
+		}
+		return characteristicsList;
 	}
 }

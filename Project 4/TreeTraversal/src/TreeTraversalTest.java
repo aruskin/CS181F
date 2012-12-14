@@ -12,7 +12,7 @@ public class TreeTraversalTest {
 	public void testFileToTree() {
 		TreeTraversal tester = new TreeTraversal();
 		
-		//build simple tree to test equality against
+		//build simple tree with two leaves to test equivalency against
 		BinaryTree<KeyTriple> testTree1 = new BinaryTree(new KeyTriple("First question?",
 											"left", "leftimg.gif",
 											"right", "rightimg.gif"), 
@@ -23,7 +23,7 @@ public class TreeTraversalTest {
 		//same values, rather than that the trees are the same object
 		assertEquals(testTree1.toString(), tester.fileToTree("src/test01.tree").toString());
 		
-		//build slightly more complicated tree to test equality against
+		//build slightly more complicated tree to test equivalency against
 		BinaryTree<KeyTriple> right = new BinaryTree(new KeyTriple("Second right question?", 
 										"left 2r", "leftimg2r.gif",
 										"right 2r", "rightimg2r.gif"),
@@ -47,5 +47,10 @@ public class TreeTraversalTest {
 											left, right);
 		
 		assertEquals(testTree2.toString(), tester.fileToTree("src/test02.tree").toString());
+		
+		//build tree with only one leaf to test equivalency
+		BinaryTree<KeyTriple> testTree3 = new BinaryTree(new KeyTriple("Answer A"));
+		
+		assertEquals(testTree3.toString(), tester.fileToTree("src/test03.tree").toString());
 	}
 }

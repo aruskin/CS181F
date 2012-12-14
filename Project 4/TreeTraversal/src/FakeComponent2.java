@@ -7,8 +7,12 @@ public class FakeComponent2{
 		currentIndex = 0;
 	}
 	public String userQuery(KeyTriple nodeValue){
-		String choice = userChoices[currentIndex];
-		currentIndex++;
-		return choice;
+		if(currentIndex >= (userChoices.length + 1)){
+			return "TERRIBLE USER INPUT";
+		}else{
+			String choice = userChoices[currentIndex];
+			currentIndex++;
+			return choice;
+		}
 	}	
 }

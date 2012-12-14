@@ -71,8 +71,9 @@ public class TreeTraversal {
 	 * dichotomous key data, returns list of characteristics indicated by the 
 	 * user.
 	 */
-	public Queue<Association<String, String>> traverse(BinaryTree<KeyTriple> tree,
+	public static Queue<Association<String, String>> traverse(BinaryTree<KeyTriple> tree,
 														FakeComponent2 comp2){
+		
 		BinaryTree<KeyTriple> finger = tree; //node we're currently considering
 		Boolean done = false; //whether or not we're finished traversing the tree
 		Queue<Association<String, String>> characteristicsList =

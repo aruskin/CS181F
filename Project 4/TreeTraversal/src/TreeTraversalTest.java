@@ -102,7 +102,10 @@ public class TreeTraversalTest {
 						new QueueVector<Association<String, String>>();
 		resultsList1.add(new Association<String, String>
 							("First question?", "right 1"));
-		assertEquals(resultsList1, tester.traverse(testTree, new FakeComponent2(testInput1)));
+		FakeComponent2 comp2sim = new FakeComponent2(testInput1);
+
+		assertEquals(resultsList1.toString(), 
+				tester.traverse(testTree, comp2sim).toString());
 		
 	}
 	

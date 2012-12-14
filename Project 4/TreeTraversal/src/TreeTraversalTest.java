@@ -1,5 +1,5 @@
 import static org.junit.Assert.*;
-import structure5.BinaryTree;
+import structure5.*;
 
 import org.junit.Test;
 
@@ -87,7 +87,7 @@ public class TreeTraversalTest {
 		}	
 	}
 	
-	//@Test
+	@Test
 	/*
 	 * 3. Traversing the tree (stopping at leaves)
 	 * Requirement: Must correctly traverse tree based on user input and
@@ -95,7 +95,16 @@ public class TreeTraversalTest {
 	 * the correct information and be in the correct format to be used by
 	 * Component 3.
 	 */
-	//public void testTraverseStopAtLeaves(){}
+	public void testTraverseStopAtLeaves(){
+		BinaryTree<KeyTriple> testTree = tester.fileToTree("src/test02.tree");
+		String[] testInput1 = {"RIGHT"};
+		QueueVector<Association<String, String>> resultsList1 = 
+						new QueueVector<Association<String, String>>();
+		resultsList1.add(new Association<String, String>
+							("First question?", "right 1"));
+		assertEquals(resultsList1, tester.traverse(testTree, new FakeComponent2(testInput1)));
+		
+	}
 	
 	@Test
 	/* 7. Accessor methods for KeyTriple work correctly

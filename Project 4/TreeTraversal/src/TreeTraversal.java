@@ -73,7 +73,7 @@ public class TreeTraversal {
 	 */
 	public Queue<Association<String, String>> traverse(BinaryTree<KeyTriple> tree,
 														FakeComponent2 comp2){
-		BinaryTree finger = tree; //node we're currently considering
+		BinaryTree<KeyTriple> finger = tree; //node we're currently considering
 		Boolean done = false; //whether or not we're finished traversing the tree
 		Queue<Association<String, String>> characteristicsList =
 				new QueueVector<Association<String, String>>();
@@ -83,16 +83,25 @@ public class TreeTraversal {
 		
 		while(!done){ //user has not yet reached leaf or elected to skip
 			//send value of current node to Component 2
-			String result = comp2.userQuery(tree.value());
+			KeyTriple currValue = finger.value();
+			String result = comp2.userQuery(currValue);
 			Association<String, String> plantChar;
 			if(result == "SKIP"){
 				done = true;
 			}
 			else if(result == "LEFT"){
-				//need accessor methods for KeyTriple before we can proceed further. 
+				plantChar = new Association(currValue.getQuestion(),
+									currValue.getLeftAnswer());
+				characteristicsList.add(plantChar);
+				finger = finger.left();
+				done = !(finger.isEmpty());
 			}
 			else if(result == "RIGHT"){
-				//same...
+				plantChar = new Association(currValue.getQuestion(),
+						currValue.getRightAnswer());
+				characteristicsList.add(plantChar);
+				finger = finger.right();
+				done = !(finger.isEmpty());				
 			}
 			else{
 				throw new RuntimeException("traverse: received invalid user input");

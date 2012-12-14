@@ -83,8 +83,23 @@ public class TreeTraversalTest {
 			tester.fileToTree("src/test06.tree");
 			fail("Should have thrown an exception");
 		}catch(RuntimeException e){
-			System.out.println(e.getMessage());
 			assertEquals("fileToTree: file parse error", e.getMessage());
 		}	
-	}	
+	}
+	
+	@Test
+	/*
+	 * 8. Non-existent file passed in as parameter to fileToTree method
+	 * Requirement: Only valid files should be used as input; if an invalid
+	 * file name is passed in, we should return an error message.
+	 */
+	public void testFileToTreeNonexistentInput(){
+		try{
+			tester.fileToTree("not_a_real_file.txt");
+			fail("Should have thrown an exception");
+		}catch(RuntimeException e){
+			assertEquals("Problems reading file: not_a_real_file.txt",
+					e.getMessage());
+		}
+	}
 }

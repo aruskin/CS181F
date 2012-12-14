@@ -63,7 +63,7 @@ public class TreeTraversal {
 		}
 		catch(IOException e){
 			// Error handling for invalid input files.
-			throw new RuntimeException("Problems reading file: " + filename +"\n" + e);
+			throw new RuntimeException("Problems reading file: " + filename);
 		}
 	}
 }

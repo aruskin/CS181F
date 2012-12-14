@@ -8,11 +8,10 @@ import org.junit.Before;
 public class TreeTraversalTest {
 	private TreeTraversal tester;
 	private BinaryTree<KeyTriple> fakeKey;
-	private FakeComponent2 fakeComp2;
 	
 	@Before
 	public void setUp(){
-		tester = new TreeTraversal(fakeComp2);
+		tester = new TreeTraversal();
 		
 		//build tree to use as our input for traversal tests
 		BinaryTree<KeyTriple> right = new BinaryTree(new KeyTriple("Second right question?", 

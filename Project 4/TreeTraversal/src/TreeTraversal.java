@@ -2,11 +2,8 @@ import java.io.*;
 import structure5.*;
 
 public class TreeTraversal {
-	private static FakeComponent2 comp2;
+	private static FakeComponent2 comp2 = new FakeComponent2();
 	
-	public TreeTraversal(FakeComponent2 c2){
-		comp2 = c2;
-	}
 	public void setComponent2Input(String[] newInput){
 		comp2.setInput(newInput);
 	}

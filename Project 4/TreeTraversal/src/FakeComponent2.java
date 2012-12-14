@@ -2,6 +2,9 @@
 public class FakeComponent2{
 	private String[] userChoices;
 	private int currentIndex;
+	public FakeComponent2(){
+		currentIndex = 0;
+	}
 	public FakeComponent2(String[] input){
 		userChoices = input;
 		currentIndex = 0;

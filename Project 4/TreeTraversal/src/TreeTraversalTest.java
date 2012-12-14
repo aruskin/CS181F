@@ -222,4 +222,24 @@ public class TreeTraversalTest {
 					e.getMessage());
 		}
 	}
+	
+	@Test
+	/* 9. Empty tree passed in as parameter to traverse method
+	 * Requirement: In the event that traverse is called on an empty tree,
+	 * we should return an error message.
+	 */
+	public void testTraverseEmptyTree(){
+		try{
+			BinaryTree<KeyTriple> emptyTree = new BinaryTree<KeyTriple>();
+			// the input to component 2 shouldn't be used, but want it
+			//to be valid anyway
+			String[] testInput1 = {"RIGHT", "RIGHT"};
+			tester.setComponent2Input(testInput1);
+			
+			tester.traverse(emptyTree);
+			fail("Should have thrown an exception");
+		}catch(RuntimeException e){
+			assertEquals("traverse: passed an empty tree", e.getMessage());
+		}
+	}
 }

@@ -1,16 +1,22 @@
 import static org.junit.Assert.*;
 import structure5.BinaryTree;
 
-import org.junit.Before;
 import org.junit.Test;
 
 
 public class TreeTraversalTest {
+	private TreeTraversal tester;
+	
+	public void setUp(){
+		tester = new TreeTraversal();
+	}
 
 	@Test
-	//Converting (correctly formatted) text input to binary tree
-	public void testFileToTree() {
-		TreeTraversal tester = new TreeTraversal();
+	/* 1. Converting (correctly formatted) text input to binary tree
+	 * Requirement: Must read in text file representation of binary tree
+	 * in a specific format and correctly convert it into a binary tree.
+	 */
+	public void testFileToTreeGoodInput() {
 		
 		//build simple tree with two leaves to test equivalency against
 		BinaryTree<KeyTriple> testTree1 = new BinaryTree(new KeyTriple("First question?",
@@ -53,4 +59,32 @@ public class TreeTraversalTest {
 		
 		assertEquals(testTree3.toString(), tester.fileToTree("src/test03.tree").toString());
 	}
+	
+	@Test
+	/* 2. Handling incorrectly formatted text input
+	 * Requirement: In the event that the component receives invalid input for
+	 * the representation of the dichotomous key, return an error message.
+	 */
+	public void testFileToTreeBadInput(){
+		try{
+			//test input has a question but no answers
+			tester.fileToTree("src/test04.tree");
+			fail("Should have thrown an exception");
+		}catch(RuntimeException e){
+			assertEquals("fileToTree: file parse error", e.getMessage());
+		}try{
+			//clearly incorrect test input
+			tester.fileToTree("src/test05.tree");
+			fail("Should have thrown an exception");
+		}catch(RuntimeException e){
+			assertEquals("fileToTree: file parse error", e.getMessage());
+		}try{
+			//more subtly incorrect test input
+			tester.fileToTree("src/test06.tree");
+			fail("Should have thrown an exception");
+		}catch(RuntimeException e){
+			System.out.println(e.getMessage());
+			assertEquals("fileToTree: file parse error", e.getMessage());
+		}	
+	}	
 }

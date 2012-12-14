@@ -25,6 +25,12 @@ public class TreeTraversal {
 			 * method again for each of the children
 			 */
 			String[] subStrings = line.split("@"); //parses line into question and answers
+			if(subStrings.length != 5){
+				//this is the case where the line either doesn't have all
+				//of the necessary information or is incorrectly partitioned
+				// by "@" characters
+				throw new RuntimeException("fileToTree: file parse error");
+			}
 			return new BinaryTree<KeyTriple>
 			(new KeyTriple(subStrings[0].substring(1), subStrings[1], 
 					subStrings[2], subStrings[3], subStrings[4]), 

@@ -146,10 +146,27 @@ public class TreeTraversalTest {
 				new QueueVector<Association<String, String>>();
 		resultsList1.add(new Association("First question?", "left 1"));
 		
-		assertEquals(resultsList1,
-				tester.traverse(fakeKey, new FakeComponent2(testInput1)));		
+		assertEquals(resultsList1.toString(),
+				tester.traverse(fakeKey, new FakeComponent2(testInput1)).toString());		
 	}
 	
+	@Test
+	/* 5. Handling unexpected input from Component 2
+	 * 	Requirement: In the event that Component 2 sends anything other than
+	 * LEFT, RIGHT, or SKIP, return an error message.
+	 */
+	public void testTraverseBadInput(){
+		try{
+			String[] testInput1 = {"LEFT", "YES", "RIGHT"};
+			tester.traverse(fakeKey, new FakeComponent2(testInput1));
+			fail("Should have thrown an exception");
+		}
+		catch(RuntimeException e){
+			assertEquals("traverse: received invalid user input",
+					e.getMessage());
+		}
+		
+	}
 	@Test
 	/* 7. Accessor methods for KeyTriple work correctly
 	 * Requirement: The accessor methods for KeyTriple should return the 

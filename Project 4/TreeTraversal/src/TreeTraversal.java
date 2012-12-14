@@ -2,10 +2,23 @@ import java.io.*;
 import structure5.*;
 
 public class TreeTraversal {
+	//placeholder for the actual Component 2
 	private static FakeComponent2 comp2 = new FakeComponent2();
 	
+	/* This method should not exist after integration, but is
+	 * necessary to simulate Component 2 and run tests. Changes
+	 * the placeholder Component 2's "user input" to newInput.
+	 */
 	public void setComponent2Input(String[] newInput){
 		comp2.setInput(newInput);
+	}
+	
+	/* This method also shouldn't exist after integration.
+	 * Necessary to test that we're sending the correct
+	 * information to Component 2 in the traverse method.
+	 */
+	public Vector<KeyTriple> getOutputToComponent2(){
+		return comp2.retrieveValues();
 	}
 	
 	/* Helper method for converting file to binary tree; recursively

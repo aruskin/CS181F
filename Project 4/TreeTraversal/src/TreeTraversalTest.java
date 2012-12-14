@@ -6,8 +6,9 @@ import org.junit.Before;
 
 
 public class TreeTraversalTest {
-	private TreeTraversal tester;
-	private BinaryTree<KeyTriple> fakeKey;
+	private TreeTraversal tester; //instance of TreeTraversal class to run tests on
+	private BinaryTree<KeyTriple> fakeKey; //tree representation of key that we will
+										   // use for several of the tests
 	
 	@Before
 	public void setUp(){
@@ -163,13 +164,31 @@ public class TreeTraversalTest {
 			tester.setComponent2Input(testInput1);
 			tester.traverse(fakeKey);
 			fail("Should have thrown an exception");
-		}
-		catch(RuntimeException e){
+		}catch(RuntimeException e){
 			assertEquals("traverse: received invalid user input",
 					e.getMessage());
 		}
+	}
+	
+	@Test
+	/* 6. Passing correct information to Component 2
+	 * Requirement: Must be able to send value to the display component
+	 * at each node.
+	 */
+	public void testTraverseOutputToComponent2(){
+		String[] testInput1 = {"RIGHT", "RIGHT"};
+		tester.setComponent2Input(testInput1);
+		Vector<KeyTriple> valuesSent = new Vector<KeyTriple>();
+		valuesSent.add(new KeyTriple("First question?",
+									"left 1", "leftimg1.gif",
+									"right 1", "rightimg1.gif"));
+		valuesSent.add(new KeyTriple("Second right question?",
+									"left 2r", "leftimg2r.gif",
+									"right 2r", "rightimg2r.gif"));
+		assertEquals(valuesSent, tester.getOutputToComponent2());
 		
 	}
+	
 	@Test
 	/* 7. Accessor methods for KeyTriple work correctly
 	 * Requirement: The accessor methods for KeyTriple should return the 

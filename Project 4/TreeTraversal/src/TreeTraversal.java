@@ -2,6 +2,14 @@ import java.io.*;
 import structure5.*;
 
 public class TreeTraversal {
+	private static FakeComponent2 comp2;
+	
+	public TreeTraversal(FakeComponent2 c2){
+		comp2 = c2;
+	}
+	public void setComponent2Input(String[] newInput){
+		comp2.setInput(newInput);
+	}
 	
 	/* Helper method for converting file to binary tree; recursively
 	 * creates nodes based on lines from text file.
@@ -71,8 +79,8 @@ public class TreeTraversal {
 	 * dichotomous key data, returns list of characteristics indicated by the 
 	 * user.
 	 */
-	public static Queue<Association<String, String>> traverse(BinaryTree<KeyTriple> tree,
-														FakeComponent2 comp2){
+	public static Queue<Association<String, String>> 
+		traverse(BinaryTree<KeyTriple> tree){
 		
 		BinaryTree<KeyTriple> finger = tree; //node we're currently considering
 		Boolean done = false; //whether or not we're finished traversing the tree

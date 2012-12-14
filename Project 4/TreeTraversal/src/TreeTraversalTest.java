@@ -8,10 +8,11 @@ import org.junit.Before;
 public class TreeTraversalTest {
 	private TreeTraversal tester;
 	private BinaryTree<KeyTriple> fakeKey;
+	private FakeComponent2 fakeComp2;
 	
 	@Before
 	public void setUp(){
-		tester = new TreeTraversal();
+		tester = new TreeTraversal(fakeComp2);
 		
 		//build tree to use as our input for traversal tests
 		BinaryTree<KeyTriple> right = new BinaryTree(new KeyTriple("Second right question?", 
@@ -104,6 +105,7 @@ public class TreeTraversalTest {
 	 */
 	public void testTraverseStopAtLeaves(){
 		String[] testInput1 = {"RIGHT", "RIGHT"}; //simulating user input
+		tester.setComponent2Input(testInput1);
 		
 		//the expected list of characteristics, given testTree and testInput1
 		Queue<Association<String, String>> resultsList1 = 
@@ -116,10 +118,11 @@ public class TreeTraversalTest {
 					("Name", "Answer E"));
 
 		assertEquals(resultsList1.toString(), 
-				tester.traverse(fakeKey, new FakeComponent2(testInput1)).toString());
+				tester.traverse(fakeKey).toString());
 		
 		
 		String[] testInput2 = {"LEFT", "RIGHT", "LEFT"};
+		tester.setComponent2Input(testInput2);
 		
 		Queue<Association<String, String>> resultsList2 = 
 				new QueueVector<Association<String, String>>();
@@ -129,8 +132,7 @@ public class TreeTraversalTest {
 		resultsList2.add(new Association("Name", "Answer B"));
 		
 		assertEquals(resultsList2.toString(), 
-				tester.traverse(fakeKey, 
-						new FakeComponent2(testInput2)).toString());		
+				tester.traverse(fakeKey).toString());		
 	}
 	
 	@Test
@@ -142,12 +144,13 @@ public class TreeTraversalTest {
 	 */
 	public void testTraverseSkipping(){
 		String[] testInput1 = {"LEFT", "SKIP"};
+		tester.setComponent2Input(testInput1);
 		Queue<Association<String, String>> resultsList1 = 
 				new QueueVector<Association<String, String>>();
 		resultsList1.add(new Association("First question?", "left 1"));
 		
 		assertEquals(resultsList1.toString(),
-				tester.traverse(fakeKey, new FakeComponent2(testInput1)).toString());		
+				tester.traverse(fakeKey).toString());		
 	}
 	
 	@Test
@@ -158,7 +161,8 @@ public class TreeTraversalTest {
 	public void testTraverseBadInput(){
 		try{
 			String[] testInput1 = {"LEFT", "YES", "RIGHT"};
-			tester.traverse(fakeKey, new FakeComponent2(testInput1));
+			tester.setComponent2Input(testInput1);
+			tester.traverse(fakeKey);
 			fail("Should have thrown an exception");
 		}
 		catch(RuntimeException e){

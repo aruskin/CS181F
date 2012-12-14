@@ -6,6 +6,10 @@ public class FakeComponent2{
 		userChoices = input;
 		currentIndex = 0;
 	}
+	public void setInput(String[] newInput){
+		userChoices = newInput;
+		currentIndex = 0;
+	}
 	public String userQuery(KeyTriple nodeValue){
 		if(currentIndex >= (userChoices.length + 1)){
 			return "TERRIBLE USER INPUT";

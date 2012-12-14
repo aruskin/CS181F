@@ -86,8 +86,10 @@ public class TreeTraversal {
 			//send value of current node to Component 2
 			KeyTriple currValue = finger.value();
 			if(finger.left().isEmpty() || finger.right().isEmpty()){
+				System.out.println("HERE");
 				Association<String, String> plantChar = 
 						new Association("Name", currValue.getQuestion());
+				characteristicsList.add(plantChar);
 				done = true;
 			}else{
 				String result = comp2.userQuery(currValue);
@@ -101,7 +103,6 @@ public class TreeTraversal {
 					characteristicsList.add(plantChar);
 					finger = finger.left();
 					done = finger.isEmpty();
-					System.out.println(finger.value().toString() + done);
 				}
 				else if(result == "RIGHT"){
 					Association<String, String> plantChar = new Association(currValue.getQuestion(),

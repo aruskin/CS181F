@@ -116,7 +116,7 @@ public class TreeTraversalTest {
 				new QueueVector<Association<String, String>>();
 		resultsList2.add(new Association("First question?", "left 1"));
 		resultsList2.add(new Association("Second left question?", "right 2l"));
-		resultsList2.add(new Association("Thirld lr question?", "left 3lr"));
+		resultsList2.add(new Association("Third lr question?", "left 3lr"));
 		resultsList2.add(new Association("Name", "Answer B"));
 		
 		assertEquals(resultsList2.toString(), 

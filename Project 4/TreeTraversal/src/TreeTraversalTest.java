@@ -107,6 +107,18 @@ public class TreeTraversalTest {
 		assertEquals(resultsList1.toString(), 
 				tester.traverse(testTree, comp2sim).toString());
 		
+		String[] testInput2 = {"LEFT", "RIGHT", "LEFT"};
+		QueueVector<Association<String, String>> resultsList2 = 
+				new QueueVector<Association<String, String>>();
+		resultsList2.add(new Association("First question?", "left 1"));
+		resultsList2.add(new Association("Second left question?", "right 2l"));
+		resultsList2.add(new Association("Thirld lr question?", "left 3lr"));
+		
+		assertEquals(resultsList2.toString(), 
+				tester.traverse(testTree, 
+						new FakeComponent2(testInput2)).toString());
+		
+		
 	}
 	
 	@Test

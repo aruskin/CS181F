@@ -178,6 +178,8 @@ public class TreeTraversalTest {
 	public void testTraverseOutputToComponent2(){
 		String[] testInput1 = {"RIGHT", "RIGHT"};
 		tester.setComponent2Input(testInput1);
+		tester.traverse(fakeKey);
+		
 		Vector<KeyTriple> valuesSent = new Vector<KeyTriple>();
 		valuesSent.add(new KeyTriple("First question?",
 									"left 1", "leftimg1.gif",
@@ -185,7 +187,8 @@ public class TreeTraversalTest {
 		valuesSent.add(new KeyTriple("Second right question?",
 									"left 2r", "leftimg2r.gif",
 									"right 2r", "rightimg2r.gif"));
-		assertEquals(valuesSent, tester.getOutputToComponent2());
+		
+		assertEquals(valuesSent.toString(), tester.getOutputToComponent2().toString());
 		
 	}
 	

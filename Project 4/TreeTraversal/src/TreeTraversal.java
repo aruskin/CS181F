@@ -85,27 +85,34 @@ public class TreeTraversal {
 		while(!done){ //user has not yet reached leaf or elected to skip
 			//send value of current node to Component 2
 			KeyTriple currValue = finger.value();
-			String result = comp2.userQuery(currValue);
-			Association<String, String> plantChar;
-			if(result == "SKIP"){
+			if(finger.left().isEmpty() || finger.right().isEmpty()){
+				Association<String, String> plantChar = 
+						new Association("Name", currValue.getQuestion());
 				done = true;
-			}
-			else if(result == "LEFT"){
-				plantChar = new Association(currValue.getQuestion(),
-									currValue.getLeftAnswer());
-				characteristicsList.add(plantChar);
-				finger = finger.left();
-				done = !(finger.isEmpty());
-			}
-			else if(result == "RIGHT"){
-				plantChar = new Association(currValue.getQuestion(),
-						currValue.getRightAnswer());
-				characteristicsList.add(plantChar);
-				finger = finger.right();
-				done = !(finger.isEmpty());				
-			}
-			else{
-				throw new RuntimeException("traverse: received invalid user input");
+			}else{
+				String result = comp2.userQuery(currValue);
+				// case where we've hit a leaf
+
+				if(result == "SKIP"){
+					done = true;
+				}else if(result == "LEFT"){
+					Association<String, String> plantChar = new Association(currValue.getQuestion(),
+							currValue.getLeftAnswer());
+					characteristicsList.add(plantChar);
+					finger = finger.left();
+					done = finger.isEmpty();
+					System.out.println(finger.value().toString() + done);
+				}
+				else if(result == "RIGHT"){
+					Association<String, String> plantChar = new Association(currValue.getQuestion(),
+							currValue.getRightAnswer());
+					characteristicsList.add(plantChar);
+					finger = finger.right();
+					done = finger.isEmpty();				
+				}
+				else{
+					throw new RuntimeException("traverse: received invalid user input");
+				}
 			}
 		}
 		return characteristicsList;

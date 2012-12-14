@@ -97,11 +97,15 @@ public class TreeTraversalTest {
 	 */
 	public void testTraverseStopAtLeaves(){
 		BinaryTree<KeyTriple> testTree = tester.fileToTree("src/test02.tree");
-		String[] testInput1 = {"RIGHT"};
+		String[] testInput1 = {"RIGHT", "RIGHT"};
 		QueueVector<Association<String, String>> resultsList1 = 
 						new QueueVector<Association<String, String>>();
-		resultsList1.add(new Association<String, String>
-							("First question?", "right 1"));
+		resultsList1.add(new Association
+					("First question?", "right 1"));
+		resultsList1.add(new Association
+					("Second right question?", "right 2r"));
+		resultsList1.add(new Association
+					("Name", "Answer E"));
 		FakeComponent2 comp2sim = new FakeComponent2(testInput1);
 
 		assertEquals(resultsList1.toString(), 
@@ -113,6 +117,7 @@ public class TreeTraversalTest {
 		resultsList2.add(new Association("First question?", "left 1"));
 		resultsList2.add(new Association("Second left question?", "right 2l"));
 		resultsList2.add(new Association("Thirld lr question?", "left 3lr"));
+		resultsList2.add(new Association("Name", "Answer B"));
 		
 		assertEquals(resultsList2.toString(), 
 				tester.traverse(testTree, 

@@ -1,0 +1,29 @@
+Test Driven Development Plan:
+
+1) Implement fileToTree method
+	   -dependencies: need KeyTriple class to exist but not necessarily have any methods
+	   -relevant tests:
+	   	     1. Converting (correctly formatted) text input to binary tree
+		     		  -need test files in correct format
+		     2. Handling incorrectly formatted text input
+		     		 -need test files in incorrect format (could be anything...)
+		     8. Non-existent file passed in as a parameter to fileToTree method
+
+2) Implement accessor methods for KeyTriple
+   	     -dependencies: none
+	     -relevant tests:
+	     	       7. Accessor methods for KeyTriple work correctly
+
+3) Implement traverse method
+   	     -dependencies:
+			- KeyTriple has working accessor methods
+			- need simulation of Component 2's userQuery method
+	     -relevant tests:
+	     	       3. Traversing the tree (stopping at leaves)
+		       4. Traversing the tree (skipping)
+		       5. Handling unexpected input from Component 2
+		       6. Passing correct information to Component 2
+		       	  - need Component 2 to save list of values passed from traverse and return them
+			    at the end
+		       9. Empty tree passed in as a parameter to traverse method
+	     		    	      

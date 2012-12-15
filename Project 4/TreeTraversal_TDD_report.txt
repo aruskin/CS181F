@@ -1,0 +1,24 @@
+Test Driven Development Report:
+
+	The component has two main methods, traverse and fileToTree, which, for 
+the purposes of testing, are independent of each other. However, in actual 
+implementation, the tree that is passed to traverse should be constructed by 
+fileToTree. By that logic, I decided to implement fileToTree first, but the order of 
+implementation shouldn't have made a difference. Both methods depended on the 
+implementation of the KeyTriple class, so I created a basic outline of the class before 
+implementing fileToTree (which only uses on the class's constructor method) and 
+then filled in the accessor methods before implementing traverse. While writing the 
+traverse method, I realized that I needed to create a stand-in for Component 2, 
+which I had not accounted for in my design. In retrospect, I probably should have 
+considered those class dependencies more and completely implemented KeyTriple 
+and FakeComponent2 before writing TreeTraversal's methods.
+	Any inefficiency in the process was probably caused by the fact that I had 
+completely forgotten how to program in Java. Otherwise, all of the test cases were 
+remained relevant throughout the whole process, so building test cases was not a 
+waste of time.
+	Knowing that I was going to test the code certainly made me more aware of 
+the methods' error handling cases, which I might have ignored otherwise. I also paid 
+more careful attention to the format of the output from the methods.
+	**Bugs that came up afterwards: can only address after integration**
+
+

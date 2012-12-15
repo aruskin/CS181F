@@ -12,6 +12,7 @@ public class TreeTraversalTest {
 	
 	@Before
 	public void setUp(){
+		//initialize tester
 		tester = new TreeTraversal();
 		
 		//build tree to use as our input for traversal tests
@@ -23,7 +24,6 @@ public class TreeTraversalTest {
 											(new KeyTriple("Answer D")),
 										new BinaryTree<KeyTriple>
 											(new KeyTriple("Answer E")));
-
 		BinaryTree<KeyTriple> lright =  new BinaryTree<KeyTriple>
 											(new KeyTriple("Third lr question?", 
 													"left 3lr", "leftimg3lr.gif",
@@ -32,7 +32,6 @@ public class TreeTraversalTest {
 												(new KeyTriple("Answer B")),
 											new BinaryTree<KeyTriple>
 												(new KeyTriple("Answer C")));
-
 		BinaryTree<KeyTriple> left = new BinaryTree<KeyTriple>
 										(new KeyTriple("Second left question?", 
 														"left 2l", "leftimg2l.gif",
@@ -40,7 +39,6 @@ public class TreeTraversalTest {
 										new BinaryTree<KeyTriple>
 											(new KeyTriple("Answer A")),
 										lright);
-		
 		fakeKey = new BinaryTree<KeyTriple>(new KeyTriple("First question?",
 													"left 1", "leftimg1.gif", 
 													"right 1", "rightimg1.gif"),
@@ -183,7 +181,7 @@ public class TreeTraversalTest {
 	 */
 	public void testTraverseBadInput(){
 		try{
-			String[] testInput1 = {"LEFT", "YES", "RIGHT"};
+			String[] testInput1 = {"LEFT", "YES", "RIGHT"};//clearly incorrect input
 			tester.setComponent2Input(testInput1);
 			tester.traverse(fakeKey);
 			fail("Should have thrown an exception");
@@ -199,10 +197,13 @@ public class TreeTraversalTest {
 	 * at each node.
 	 */
 	public void testTraverseOutputToComponent2(){
-		String[] testInput1 = {"RIGHT", "RIGHT"};
+		String[] testInput1 = {"RIGHT", "RIGHT"}; //simulate input
 		tester.setComponent2Input(testInput1);
-		tester.traverse(fakeKey);
 		
+		//need to go through traversal so that values sent to Comp 2
+		tester.traverse(fakeKey); 
+		
+		//set up list of expected values
 		Vector<KeyTriple> valuesSent = new Vector<KeyTriple>();
 		valuesSent.add(new KeyTriple("First question?",
 									"left 1", "leftimg1.gif",
@@ -254,6 +255,7 @@ public class TreeTraversalTest {
 	public void testTraverseEmptyTree(){
 		try{
 			BinaryTree<KeyTriple> emptyTree = new BinaryTree<KeyTriple>();
+			
 			// the input to component 2 shouldn't be used, but want it
 			//to be valid anyway
 			String[] testInput1 = {"RIGHT", "RIGHT"};

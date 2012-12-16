@@ -1,0 +1,23 @@
+Component 3 Code Review:
+
+-main method:
+	  -design states this is necessary for accessing javaDB, but should you actually be doing anything in main? I'm confused...
+	  -currently seems to be performing tests in main, and probably want to do those in a separate test suite (and make them automated)
+-getSize method:
+	 -I guess this is for error handling in the case that the list returned by TreeTraversal has any invalid associations, because
+	 otherwise you could just do list.size()?
+	 -since it's not actually removing the invalid associations from the list, not really sure what the point is...
+	 -also not sure what list.add(list.remove()) accomplishes...
+-getResultSet method:
+	 -comments within the method would be helpful--really not sure what's supposed to be happening...
+	 -you mention assuming "TREEORBUSH" just for the purposes of this project, bu is there any way to make it more generic?
+	 (since this should ideally work for any database of plants with any fields)
+	 -minor inconsistency: we discussed having fields in the database correspond exactly to questions in the dichotomous key, since
+	 that's the form that will be sent from the TreeTraversal--so TREEORBUSH would probably be more like "Is it a tree or a bush?"
+-sort method:
+      -again, comments/clearer variable names would be really helpful
+      -is this the most efficient sort method? (it could be; I honestly have no idea)
+-caculatePercentages method:
+     -seems reasonable? even just copypasting the method description from the design would make it a bit clearer, though
+
+Overall, seems to have methods specified in design and meets requirements for component. Adding comments and changing names of variables to more accurately reflect their purpose would make the code more readable and clarify your intent.

@@ -25,87 +25,112 @@ Requirements:
 -Must be able to return a list of top ten results and their associated matching percentages
 
 */
+package database_console;
 
-package database_console;        //import for the DB
+import java.sql.Connection;         // SQL imports
+import java.sql.DriverManager;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.sql.ResultSet;
+import java.io.*;                   
+import structure5.*;                // using Association
 
-import java.sql.*;                      //imports for database
-import java.util.List;                  //using a List
-import java.util.ArrayList;
+public class DBConnect {
 
-//import Association object
-
-class Query {
-    
-        /* Commands for database:
-        SELECT * FROM RM.PLANTS;                                //select all records from the table called Plants
-        SELECT * FROM RM.PLANTS WHERE JOB_TITLE='Programmer'    //searches for specific entry
-        SELECT * FROM RM.PLANTS WHERE SALARY > 1000
-        SELECT * FROM RM.PLANTS WHERE JOB_TITLE LIKE '%er'
-        */
-    
-        /* Commands for connecting to the database
-        Connection con = DriverManager.getConnection(host, uName, uPass);                           //connect
-        Statement s = con.createStatement(RecordSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE); //only scroll forward               
-        String SQL = "SELECT* FROM PLANTS";                                             //selects records from Plants
-        ResultSet rs = s.executeQuery(SQL); //returns records */
-    
     public static void main(String[] args) {
-        //method that connects us to the database that we have used (using Java DB)
-        
+        /* can't access javaDB without a main function
+        */
+        List<Association<String, Integer>> finalList = getResultSet(test1, length);
+
+    }
+    
+    /*
+     * function that calculates size of the given Queue
+     * if the entry is empty, it does not include it in the total length
+     */
+    
+    public static int getSize(Queue<Association<String, String>> list) {
+
+        return length;
+    }
+    
+    /*
+     * function that queries the database for the best matches for the given
+     * associations
+     */
+    public static List<Association<String, Integer>> getResultSet(Queue<Association<String, String>> list, int length) {
         try {
-            String host;
-            String uName;
-            String uPass;
+            //given list is empty, exit the program
+            if (list.isEmpty()) {
+                System.out.println("Error: Empty list; can't perform query");
+                System.exit(0);
+            }
             
-            
-            
-            /* read in the list of associations of questions and the users given answers from Component 3;
-            if an incomplete list is passed in, skip the question/answer pairs that are incomplete and still try and query the database with the other associations;
-            if list is null, send signal back to system to restart the dichotomous key search
-            /*
-            
-            //List<Association<String, String>> l;
+            //database access information
+            /*String host = "jdbc:derby://localhost:1527/FINAL";
+            String uName = "RM";
+            String uPass = "RM";
+            Connection con = DriverManager.getConnection(host, uName, uPass);
+            Statement stmt = con.createStatement(ResultSet.TYPE_FORWARD_ONLY, 
+                    ResultSet.CONCUR_READ_ONLY);*/
 
-            /* Query the database feature by feature, which will reduce the database through
-            each query. The query will terminate once there are no more associations to query with
-            */
+            ResultSet rs = null;
             
-            // while (L != empty) {
-            //     
-            //     rs = queryPlant(L[a]);
-            //     a++;
-            // }
+            //list of associations with the name of the plant and the number
+            //of characteristics it matches in the given queue
+            List<Association<String, Integer>> count = new Vector<>();
             
-            /*pull the plants that have a 50% match or better and return them in a list with their percentage match to Component 4
-            */
-            
-            // List<Association<String,String>> final = makeList(rs);
+            //query the database based off of the first and most broad
+            //characteristic (is it a tree or a bush?)
+            //if not either then still query to get results
 
+            /*if (a.getKey().equals("TREEORBUSH")) {
+                if (a.getValue().equals("bush")) {
+                    String SQL = "SELECT * FROM RM.PLANTS WHERE TREEORBUSH = 'bush'";
+                    rs = stmt.executeQuery(SQL);
+                } else if (a.getValue().equals("tree")) {
+                    String SQL = "SELECT * FROM RM.PLANTS WHERE TREEORBUSH = 'tree'";
+                    rs = stmt.executeQuery(SQL);
+                } else {
+                    String SQL = "SELECT * FROM RM.PLANTS";
+                    rs = stmt.executeQuery(SQL);
+                }*/
+                
+                //go through the rest of the characteristics in the given
+                //Queue and keeps tally of how many match the plants in the
+                //result set
+
+                Queue<Association<String, String>> temp = list;
+                while (rs.next()) {
+                }
+                
+                
+            return finalListFinished;
         }
-        catch ( SQLException err ) {    //handles error with SQL
-            System.out.println(err.getMessage());
+        catch ( SQLException e ) {
+            System.out.println(e.getMessage());
+            return null;
         }
     }
     
-    public ResultSet queryPlant(Assocation<String, String> association) {
-        /* takes in an Association object and looks up the association in the database
-        and queries the database for the users choice to return a smaller set of plants
-        that will be returned back to main
-        */
-        
-        /* if the association being queried doesn't exist in the database, we can't return an answer;
-        therefore we skip that question and try and query the rest of the associations
-        */
-        
-        ResultSet rs;
-        //iterate through each association in the given stack and narrow down the DB
-        return rs;
+    /*
+     * function that takes in the list of plant names and their count of how
+     * many characteristics they match and sorts them from best match the worst
+     */
+    public static List<Association<String, Integer>> sort(List<Association<String, Integer>> count) {
+        List<Association<String, Integer>> finalList = new Vector<>();
+
+        return finalList;
     }
-   
     
-    public List<Association<String, String>> makeList(ResultSet rs) {
-        // takes the rest of the result set and turns it into a usable ArrayList
-        List<Association<String, String>> L = new ArrayList<Association<String,String>>();
-        return L;
+    /*
+     * calculates the percentage matches by dividing by the total number of 
+     * characteristics in the given Queue
+     * returns a list that has the plant names and their associated percentage
+     * matche
+     */
+    public static List<Association<String, Integer>> calculatePercentages
+            (List<Association<String, Integer>> finalList, int length) {
+        return finalList;
     }
 }

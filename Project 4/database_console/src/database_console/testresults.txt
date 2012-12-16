@@ -1,0 +1,10 @@
+run:
+test1 passed
+test2 passed
+Error: Empty list, can't perform query
+test3 passed
+test4A passed
+test4B passed
+test4C passed
+test4D passed
+BUILD SUCCESSFUL (total time: 0 seconds)

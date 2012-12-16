@@ -1,0 +1,54 @@
+main method:
+
+The main function currently contains tests for the component,
+which are supposed to be in a separate automated test suite.
+Characterization: ISSUE
+MUST FIX
+
+The main function still contains some commented out code.
+Characterization: ISSUE
+SHOULD FIX
+
+
+getSize method:
+
+After some discussion, we decided that this method was unnecessary,
+since the errors it handled could be better dealt with elsewhere,
+and it would be inefficient in the cases where the input is actually
+valid.
+Characterization: ISSUE
+MUST FIX
+
+getResultSet method:
+
+The current method uses specific entries in the database and would not
+work if the database fields were to change.
+Characterization: ISSUE
+MUST FIX
+
+We discussed the potential use of macros for nested classes (such as
+Queue<Association<String, String>>) to make code shorter and easier
+to read.
+Characterization: QUESTION
+COMMENT
+
+sort method:
+
+We were unsure whether the current method would be the most efficient sort
+method. Although we're not overly concerned with complexity, may want to 
+look into alternate methods.
+Characterization: QUESTION
+COMMENT
+
+Overall:
+
+Variable names are not descriptive, which makes the code difficult to read.
+Characterization: QUESTION
+SHOULD FIX
+
+There aren't any comments within the methods, which makes it hard to understand
+what the code is supposed to be doing.
+Characterization: QUESTION
+SHOULD FIX
+
+Conclusion: Code approved with required changes.

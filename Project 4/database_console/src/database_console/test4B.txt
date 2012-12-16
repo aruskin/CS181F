@@ -1,0 +1,1 @@
+<Vector: <Association: Rhododendron=100> <Association: Burning Bush=75> <Association: Juniper Bush=50>>

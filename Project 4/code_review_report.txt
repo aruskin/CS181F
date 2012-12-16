@@ -30,7 +30,9 @@ MUST FIX
 getResultSet method:
 
 The current method uses specific entries in the database and would not
-work if the database fields were to change.
+work if the database fields were to change. Update: having difficulties
+using a generic type to query the field since they must be predefined.
+Don't know if this fix will be possible.
 Characterization: ISSUE
 MUST FIX
 

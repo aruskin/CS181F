@@ -15,10 +15,13 @@ and FakeComponent2 before writing TreeTraversal's methods.
 	Any inefficiency in the process was probably caused by the fact that I had 
 completely forgotten how to program in Java. Otherwise, all of the test cases were 
 remained relevant throughout the whole process, so building test cases was not a 
-waste of time.
+waste of time. In addition, the tests made it easier to find exactly where errors 
+in the program occur.
 	Knowing that I was going to test the code certainly made me more aware of 
 the methods' error handling cases, which I might have ignored otherwise. I also paid 
-more careful attention to the format of the output from the methods.
-	**Bugs that came up afterwards: can only address after integration**
+more careful attention to the format of the output from the methods. 
+	Occasionally tests that had previously passed would fail after modifying code, but
+those were all easy to fix, and I made sure that all tests passed again before adding new 
+code. Since we didn't end up integrating, there weren't any bugs that came up later.
 
 

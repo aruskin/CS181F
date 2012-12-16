@@ -1,0 +1,45 @@
+Floradex
+Code Review: Component 3
+
+Skyler Lipscomb
+
+
+**COMMENTING
+There is NO commenting within the functions! These are really long functions and they could use
+quite a bit of commenting - especially since using databases is new to all of us and it would be
+good for clarifying what's happening.
+
+**TESTS
+The tests shouldn't be in the main() function, the should be in a separate testing function. I think
+that JUnit is what is usually used? That way you provide asserts that the return values are correct,
+not just judging it by eye. At the moment the tests aren't automated because they require human
+input to judge the answers.
+
+**FUNCTION LENGTH
+These seem like REALLY long functions - is there any way you can break them down into helper
+functions? I'm worried that during debugging, if you run into errors, it will be hard to track down
+which part of the code led to the actual issue.
+
+**getResultSet CONDITIONALS
+I don't understand why there are "magic values" coded in here on lines 125 - 135. This makes it
+look to me like the code is written specifically for one database (which it shouldn't be). These values
+(such as "TREEORBUSH") should be variables from the parameters of the function, shouldn't they?
+Or at least variables passed from the database, not typed in by you?
+
+**LONG TYPE NAMES
+List<Association<String, Integer>> is really long! Do you know if there's a
+way to make a macro or something to be able to cut the length of this down
+a bit? It would greatly simplify the code, and would make it easier to read
+both while coding and reviewing.
+
+**LOOP VARIABLES
+Using names like i,m,z,etc. makes it hard to tell what each for loop is doing
+in the code. Maybe more explicit variable names would be useful for future
+reference.
+
+**DOCUMENT STRINGS
+In addition to commenting within the functions, I think docstrings would be
+a good thing to add. I think the function names are fairly clear but it would
+make it much more clear what each is doing.
+
+

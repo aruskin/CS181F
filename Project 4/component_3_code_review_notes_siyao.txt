@@ -1,0 +1,51 @@
+Code Review: Component 3
+Reviewer: Siyao Xie
+
+Main:
+- It might be better to put these tests into an actual test class with each test as a
+separate method of the test class (test suite).
+
+- Also there are many commented out code. What are they for? Should probably remove from
+the final version.
+
+getSize:
+- Is there a build in size function for queue?
+- Shouldn't the list passed from Component 1 contain no association that has empty strings? 
+Is this trying to deal with the case when users skip? Then shouldn't only
+the last association's value be empty? So maybe you can just check to see if the
+last association is valid then return list.size() or list.size()-1?
+
+getResults:
+- Not quite understanding line 125-135. This part of the code seems very specific to only 
+the broadest (first) question. What about the other questions and queries?
+
+- Need more commenting to explain what line 138-147 is doing..... Especially for this
+if statement: if (temp2.getValue().equals(rs.getString(temp2.getKey()))), it might be
+better to declares some of the variables above.
+
+- Is there only one entry in rs ever?
+
+- Readibility will benefit a lot from more descriptive variable names. 
+(a? rs? temp? temp2? j? count??)
+
+sort:
+- It does not seem like the most efficient sorting ever.... but it seems to work.
+- z and y as variable names are kind of twisting my brain. 
+
+Overall:
+The code makes sense to me for the most part. But it seems to only work for some specific
+test cases (the ones given).
+
+Comments: 
+There only exists the most high level comments, thus making the code very hard to understand.
+It is hard to see if the code is obviously correct or not with more detailed comments.
+
+Variable names:
+Having better variable names can increase the readability of the code a lot too. These vague
+and abstract names might also make it hard to code and debug in the process.
+
+
+
+
+
+

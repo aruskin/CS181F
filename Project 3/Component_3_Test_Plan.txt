@@ -16,8 +16,7 @@ Index of test cases:
         White Box test cases:
                 2. Incomplete list passed in as a parameter
                 3. Null list passed in as a parameter
-                4. Associations within list exist in the database
-                5. Complete, working database; information retrieval
+                4. Complete, working database; information retrieval
 
 
 Black box test cases:
@@ -48,14 +47,7 @@ Set-up/Correctness: Pass in an empty list.  The component should handle it by se
 signal to the system to restart the dichotomous key search.
 
 
-4.  Requirement: Given associations in list must exist within database.
-        Justification: If the given associations are invalid or don’t exist within the database then 
-we can’t query the database.
-Set-up/Correctness: Pass in a list with associations that don’t exist in the database.  The 
-component should have the same behavior as Test Case # 2.
-
-
-       5.  Requirement: Database must be valid and complete in order to return plant names.
-        Justification: Without a working, complete database, we can’t complete the query.
-        Set-up/Correctness: Create a set of automated tests that send in a list of associations 
+4.  Requirement: Database must be valid and complete in order to return plant names.
+Justification: Without a working, complete database, we can’t complete the query.
+Set-up/Correctness: Create a set of automated tests that send in a list of associations 
 that specifically match each plant within the database and see if it returns that plant as a top match.  If the database has an invalid entry then the component should behave as the same as Test Case #2 and #4.  If the query never returns anything from the database (i.e. the plant name does not exist in the database, or the query just failed) then there is no possibility of returning a set of plants.  We would need to notify the system that a major error has occurred and notify the user that the applet is no longer working.

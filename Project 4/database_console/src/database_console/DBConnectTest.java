@@ -23,7 +23,7 @@ public class DBConnect {
         /*
          * test1: passed in associations for Burning Bush
          * should return Burning Bush as a top choice
-         */
+         */ 
             Queue<Association<String,String>> test1 = new QueueVector<>();
             Association<String,String> temp1 = new Association("TREEORBUSH", "bush");
             test1.add(temp1);

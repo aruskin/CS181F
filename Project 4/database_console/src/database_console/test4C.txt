@@ -1,0 +1,1 @@
+<Vector: <Association: Evergreen Tree=100> <Association: Avocado=100> <Association: Pine Tree=75>>

@@ -14,8 +14,7 @@ import java.sql.Connection;         // SQL imports
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.sql.ResultSet;
-import java.io.*;                   
+import java.sql.ResultSet;                   
 import structure5.*;                // using Association
 
 public class DBConnect {

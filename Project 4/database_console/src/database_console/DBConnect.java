@@ -8,20 +8,84 @@ package database_console;
  * The purpose of this component is to connect to the local database, run a query
  * based off of the given Queue of associations, and then return a list of the top matches
  * and their associated percentage matches to Component 4.
+ * 
+ * 
+ * Database set up: I'm using Java DB and SQL to access a local database on my laptop. Since
+ * the only way to access my DB is by establishing a connection on my laptop, I will
+ * explain the steps I went through using the NetBeans IDE 7.2.1 that fill in the DB appropriately 
+ * in order to make my test suite perform correctly.
+ * 
+ * The first thing to do is create a new DB. This can be done on NetBeans by clicking on
+ * the Services tab on the left hand side and then right clicking Java DB to select
+ * Create Database.  I called my DB "FINAL" and made the Username: RM and the Password: RM.
+ * Click Ok, and a new jdbc:derby DB should appear on the left hand side.
+ * 
+ * Now, if you click on the new jdbc:derby and expand it, you can see a section labeled
+ * RM.  Create a table labeled PLANTS by right clicking the Tables folder under RM and select
+ * Create Table.  Then click Ok. Then right click PLANTS and click View Data.  You can 
+ * create new columns by right clicking PLANTS and then clicking Add Column.
+ * 
+ * The first column I added was the ID numbers.  This is just a way to keep all of the
+ * plants organized.  I added the following information:
+ *  Name: ID
+ *  Type: Integer
+ * I then checked off Primary Key and Unique since this column is for ID numbers. Then
+ * I clicked Ok.
+ * 
+ * I then added 5 more columns to identify plants by in the following order:
+ * 1. Name: NAME
+ *    Type: VARCHAR
+ *    Size: 40
+ *    Null is checked off
+ * 2. Name: TREEORBUSH
+ *    Type: VARCHAR
+ *    Size: 4
+ *    Null is checked off
+ * 3. Name: COLOR
+ *    Type: VARCHAR
+ *    Size: 10
+ *    Null is checked off
+ * 4. Name: FLOWERS
+ *    Type: VARCHAR
+ *    Size: 1
+ *    Null is checked off
+ * 5. Name: LEAVESORNEEDLES
+ *    Type: VARCHAR
+ *    Size: 8
+ *    Null is checked off
+ * 
+ * I then populated the DB with the following information by clicking the Insert
+ * Records (Alt + I) button on the SQL command window.  After each row I clicked
+ * Add Row to add another plant to the DB:
+ * 
+ * ID   NAME            TREEORBUSH COLOR        FLOWERS LEAVESORNEEDLES
+ * 1    Evergreen Tree	tree	   green	n	leaves				
+ * 2	Pine Tree	tree	   green	n	needles				
+ * 3	Burning Bush	bush	   red	        y	leaves				
+ * 4	Juniper Bush	bush	   green	n	leaves				
+ * 5	Rhododendron	bush	   pink	        y	leaves				
+ * 6	Avocado	        tree	   green        n	leaves				
+ *
+ * Now the information is properly stored in the DB. The next step is to connect
+ * to the DB we just created and this can be done by right clicking the jdbc:derby
+ * portion on the left that says the DB name FINAL and select Connect.  The broken
+ * image should then change to a fixed image and you are now connected to the DB.
+ * 
  */
 
 import java.sql.Connection;         // SQL imports
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.sql.ResultSet;                   
+import java.sql.ResultSet;                 
 import structure5.*;                // using Association
 
 public class DBConnect {
 
     public static void main(String[] args) {
         /*
-         * main required in order to use javaDB
+         * this main required in order to use javaDB; it won't allow me to delete
+         * main even though I don't need it
          */
         testSuite();
     }

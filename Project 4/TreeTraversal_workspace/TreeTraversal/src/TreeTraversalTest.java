@@ -8,7 +8,7 @@ public class TreeTraversalTest {
 	
 	private TreeTraversal tester; //instance of TreeTraversal class to run tests on
 	private BinaryTree<KeyTriple> fakeKey; //tree representation of key that we will
-					       // use for several of the tests
+										   // use for several of the tests
 	
 	@Before
 	public void setUp(){
@@ -17,33 +17,33 @@ public class TreeTraversalTest {
 		
 		//build tree to use as our input for traversal tests
 		BinaryTree<KeyTriple> right = new BinaryTree<KeyTriple>
-							(new KeyTriple("Second right question?", 
-									"left 2r", "leftimg2r.gif",
-									"right 2r", "rightimg2r.gif"),
-							new BinaryTree<KeyTriple>
-								(new KeyTriple("Answer D")),
-							new BinaryTree<KeyTriple>
-								(new KeyTriple("Answer E")));
+										(new KeyTriple("Second right question?", 
+													"left 2r", "leftimg2r.gif",
+													"right 2r", "rightimg2r.gif"),
+										new BinaryTree<KeyTriple>
+											(new KeyTriple("Answer D")),
+										new BinaryTree<KeyTriple>
+											(new KeyTriple("Answer E")));
 		BinaryTree<KeyTriple> lright =  new BinaryTree<KeyTriple>
-							(new KeyTriple("Third lr question?", 
-									"left 3lr", "leftimg3lr.gif",
-									"right 3lr", "rightimg3lr.gif"),
-							new BinaryTree<KeyTriple>
-								(new KeyTriple("Answer B")),
-							new BinaryTree<KeyTriple>
-								(new KeyTriple("Answer C")));
+											(new KeyTriple("Third lr question?", 
+													"left 3lr", "leftimg3lr.gif",
+													"right 3lr", "rightimg3lr.gif"),
+											new BinaryTree<KeyTriple>
+												(new KeyTriple("Answer B")),
+											new BinaryTree<KeyTriple>
+												(new KeyTriple("Answer C")));
 		BinaryTree<KeyTriple> left = new BinaryTree<KeyTriple>
-							(new KeyTriple("Second left question?", 
-									"left 2l", "leftimg2l.gif",
-									"right 2l", "rightimg2l.gif"),
-							new BinaryTree<KeyTriple>
-								(new KeyTriple("Answer A")),
-							lright);
+										(new KeyTriple("Second left question?", 
+														"left 2l", "leftimg2l.gif",
+														"right 2l", "rightimg2l.gif"),
+										new BinaryTree<KeyTriple>
+											(new KeyTriple("Answer A")),
+										lright);
 		fakeKey = new BinaryTree<KeyTriple>(new KeyTriple("First question?",
-								"left 1", "leftimg1.gif", 
-								"right 1", "rightimg1.gif"),
-							left,
-							right);
+													"left 1", "leftimg1.gif", 
+													"right 1", "rightimg1.gif"),
+											left,
+											right);
 	}
 
 	@Test
@@ -55,13 +55,13 @@ public class TreeTraversalTest {
 		
 		//build simple tree with two leaves to test equivalency against
 		BinaryTree<KeyTriple> testTree1 = new BinaryTree<KeyTriple>
-							(new KeyTriple("First question?",
-									"left", "leftimg.gif",
-									"right", "rightimg.gif"), 
-							new BinaryTree<KeyTriple>
-								(new KeyTriple("Answer A")),
-							new BinaryTree<KeyTriple>
-								(new KeyTriple("Answer B")));
+											(new KeyTriple("First question?",
+													"left", "leftimg.gif",
+													"right", "rightimg.gif"), 
+											new BinaryTree<KeyTriple>
+												(new KeyTriple("Answer A")),
+											new BinaryTree<KeyTriple>
+												(new KeyTriple("Answer B")));
 		
 		//toString makes sure that we're just testing to see if the trees contain the
 		//same values, rather than that the trees are the same object
@@ -76,7 +76,7 @@ public class TreeTraversalTest {
 		
 		//build tree with only one leaf to test equivalency
 		BinaryTree<KeyTriple> testTree3 = new BinaryTree<KeyTriple>
-								(new KeyTriple("Answer A"));
+												(new KeyTriple("Answer A"));
 		
 		assertEquals(testTree3.toString(), 
 					tester.fileToTree("src/test03.tree").toString());

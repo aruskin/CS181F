@@ -1,0 +1,9 @@
+QFirst question?@left 1@leftimg1.gif@right 1@rightimg1.gif
+QSecond left question?@left 2l@leftimg2l.gif@right 2l@rightimg2l.gif
+AAnswer A
+QThird lr question?@left 3lr@leftimg3lr.gif@right 3lr@rightimg3lr.gif
+AAnswer B
+AAnswer C
+QSecond right question?@left 2r@leftimg2r.gif@right 2r@rightimg2r.gif
+AAnswer D
+AAnswer E

@@ -1,0 +1,9 @@
+I have no idea how to do makefiles, so...
+
+How to build from source (assuming you have Eclipse):
+1) Download TreeTraversal_workspace from git
+2) Open Eclipse with TreeTraversal_workspace as the workspace
+3) Import->Existing Projects into Workspace-> choose TreeTraversal
+4) Go to Preferences. Under Java, select Build Path->Classpath Variables->New.
+Under Name, put "BAILEY" and for Path, choose "bailey.jar" from the workspace
+ 

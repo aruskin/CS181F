@@ -1,0 +1,7 @@
+﻿Robin Momii
+Code Review Report
+Component 3
+
+
+        Overall the code review was effective and helpful.  Most of the advice were things that I had considered at some point but had not had time to fix yet.  These included issues such as maintaining better commented code and more concise variable names.  Some of the major issues involved my use of the database as well as the location of my tests.  I was able to make most of the changes but since I have not worked with JavaDB before, I did not know how to fix some of my issues.  No one was really able to help with the database portion since none of us know how to use it so I tried to the best of my ability to compensate for the suggestions that were given.
+        The code review was a pleasant process and everyone was willing to give suggestions.  Our team is particularly good at being respectful and helpful during reviews and meetings so there were no inner conflicts between team members.  Overall it was a successful meeting.

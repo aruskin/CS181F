@@ -39,6 +39,10 @@ private class KeyTriple{
 	  	 *public KeyTriple (String q, String lft, String
 		 lftImg, String rt, String rtImg){}
 
+		// to create an instance of the class; only need parameter
+		for question (case for values of leaves)
+		* public KeyTriple (String a) {}
+
 	  	//need accessor methods for each value
 	  	* public String getQuestion() {}
 		* public String getLeftAnswer() {}
@@ -102,14 +106,17 @@ public List<Association<String, String>> traverse(BinaryTree<KeyTriple> tree){
       to traverse
 	
     while(!done){ //user has not yet reached a leaf or elected to skip
-	* send the value of the current node to Component 2, using the
-	userQuery method defined in Component 2, which will return "LEFT", "RIGHT", 
-	or "SKIP" 
-	    * if userQuery returns anything other than "LEFT," "RIGHT," or "SKIP,"
-	    throw an exception, as will not be able to keep traversing
-	* variable result(String) stores the result of the call to userQuery method
-	if(result == "SKIP") then set done to true
-	else{
+	if (we're currently considering a leaf){
+	    * variable plantChar(Association<String, String>): the key will be "Name"
+	    and the value will be the name of the plant stored in this leaf
+	    * set done to true (nowhere else to traverse)
+	}else{
+	    * send the value of the current node to Component 2, using the
+	    userQuery method defined in Component 2, which will return "LEFT", "RIGHT", 
+	    or "SKIP"
+	    * variable result(String) stores the result of the call to userQuery method 
+	    if(result == "SKIP") then set done to true
+	    else if (result is "LEFT" or "RIGHT"){
 		* variable plantChar(Association<String, String>): the
     		key will be the question associated with current node, the value
     		will be the answer the user has chosen. Note: the database should 
@@ -119,8 +126,11 @@ public List<Association<String, String>> traverse(BinaryTree<KeyTriple> tree){
 		* push plantChar onto characteristicsList
 		* update finger to appropriate child of node (as
     		indicated by result)
-		if(finger.isEmpty) then set done to true
-		//this means we have reached a leaf
+	    }
+	    else{
+		userQuery has returned something other than "LEFT," "RIGHT," or "SKIP"
+	    	*throw an exception, as will not be able to keep traversing
+	    }	
 	}
     }
     return characteristicsList

@@ -59,6 +59,8 @@ public class DBConnect {
              * test3: read in empty list of associations
              * should send error message back
              */
+             
+             //COMMENTED THIS TEST OUT SINCE IT MAKES THE PROGRAM EXIT
             //ueue<Association<String, String>> test3 = new QueueVector<>();
             //length = getSize(test3);
             //System.out.println("test3");

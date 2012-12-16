@@ -1,3 +1,11 @@
+Team Floradex
+Component 3 Code Review Report
+
+9:30 PM
+12/15/12
+Attendees: Skyler Lipscomb, Robin Momii, Amy Ruskin, Siyao Xie
+
+
 main method:
 
 The main function currently contains tests for the component,

@@ -1,0 +1,16 @@
+Floradex
+Component 2 Testing Output
+
+12/17/12 12:49AM
+
+CONSOLE OUTPUT
+-----------------------
+
+Passed test 1.
+Passed test 2.
+Passed test 3.
+Passed test 4.
+All tests passed!
+-----------------------
+
+No exceptions thrown - all tests passed.

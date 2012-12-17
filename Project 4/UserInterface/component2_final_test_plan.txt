@@ -1,0 +1,89 @@
+Team: Floradex
+Final Component 2 Test Plan
+Last updated 12/16/12
+ 
+
+GENERAL OVERVIEW
+
+
+This component takes in Node Values from component 1, displays their contents to the
+user in a window, and returns the user's choice of LEFT, RIGHT, or SKIP to component
+1. The functionality that needs to be tested is 1) the correct choice is passed back
+to component 1 based on what the user picked, and 2) that the window display shows
+the correct data and has the correct size.
+
+The following changes were made to the test plan during the implementation phase:
+
+1. No testing of whether the input type is a KeyTriple.
+
+Because the component is implemented in Java, which has type checking, the type
+of the input will be checked automatically at compile time. An error will be thrown
+by Java rather than being handled within the component.
+
+2. No testing of location of placement of buttons within the window.
+
+Using JFrame's GridBagLayout layout, the buttons are automatically places based
+on their text size and the size of the other buttons and labels. There does not
+need to be testing to make sure they all fit on the window and are visible, as
+this layout framework ensures they will be.
+
+3. Testing framework
+
+It is possible to simulate user interaction with the ActionListener class, which
+the component is already using. Thus, UISpec4J is not necessary to simulate user
+interaction with the window. The testing framework will simply be within a testing
+class in Java.
+
+
+TEST CASE INDEX
+
+Black Box
+   Return correct user choice based on user input
+White Box
+   Display window correctly
+
+
+TESTING FRAMEWORK
+
+
+Testing will take place within a testing class written for the component in Java.
+When a test fails, an assertion will throw an error that will stop the testing
+methods. If all tests pass, no error are thrown and there will be an output indicating
+that all tests passed.
+
+
+BLACK BOX TEST CASES
+
+**Return correct user choice based on user input
+
+Requirement: Must return the correct choice from the user to component 1 (as in, if
+   they choose the LEFT button, then LEFT should be the information passed back).
+
+Justification: Without correctly working buttons, the choices from the user have no 
+   meaning and they won’t be getting correct information from the application.
+
+Setup/Testing: Three different tests - LEFT, RIGHT, and SKIP. After being passed a
+   correct Node Value and setting up the window, make one of the choices and click it.
+   After, assert that the value to be passed out matches the one of the button that was
+   just pressed.
+
+Correctness: Button pressed matches the output that will be passed to component 1.
+
+
+WHITE BOX TEST CASES
+
+**Display information correctly
+
+Requirement: Must correctly display the information passed from component 1 to the 
+   user in the user interaction window
+
+Justification: If the information is not displayed correctly, the user will not be
+   able to understand what question they are answering or what answers they could give.
+
+Setup/Testing: After being passed a correct KeyTriple and the user window has been
+   updated, checks must be made on the pieces of the window to ensure consistency and
+   correct values to display. There will be assertions based on: window size, question
+   text, and image file.
+
+Correctness: Sizes are consistent with the expected results, text matches the input
+   values being passed for display, images match the files passed for display.

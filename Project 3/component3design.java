@@ -45,16 +45,6 @@ public class DBConnect {
     }
     
     /*
-     * function that calculates size of the given Queue
-     * if the entry is empty, it does not include it in the total length
-     */
-    
-    public static int getSize(Queue<Association<String, String>> list) {
-
-        return length;
-    }
-    
-    /*
      * function that queries the database for the best matches for the given
      * associations
      */

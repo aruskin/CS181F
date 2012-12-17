@@ -1,0 +1,6 @@
+Component 4 Building Instructions
+Siyao Xie
+
+- Check out (download or clone) the ResultsPage folder from GitHub.
+- Open the ResultsPage.java in DrJava or some other development tool that is able to run java programs.
+- Compile and run.

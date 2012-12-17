@@ -41,6 +41,6 @@ Requirements
 •	Respond to mouse clicks from the users to jump to the specified plant’s fact sheet page.
 •	Correctly read the plant information from the database.
 •	Display the plant information.
-•	Display placeholder image drawn by jFrame when thumbnail unaccessible.
+•	Display placeholder image when thumbnail unaccessible.
 •	Display error messages correctly when no results are returned or when factsheets are 
 unavailable.

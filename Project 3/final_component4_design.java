@@ -21,8 +21,27 @@
  */
 
 // Libraries used for GUI setup and interaction
+import java.util.List;
+import java.util.ArrayList;
+import java.util.Arrays;
+import structure5.Association;
+import java.lang.Integer;
+
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
+import java.net.URL;
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import java.net.URLConnection;
+import javax.swing.event.ChangeListener;
+import javax.swing.event.ChangeEvent;
+
 
 // JFrame allows us to create the window and buttons, and by implementing ActionLister
 // we will be able to listen for mouse clicks 
@@ -62,31 +81,37 @@ class resultsPage extends JFrame implements ActionListener {
   
   
   /* The main fucntion will:
+   * - Run tests
    * - Set up the user interface window
    * - Waits for button pressed and perform the actions specified in actionPerformed
    */
    public static void main(String[] args) {
    }
   
-}
 
-// display the corresponding factSheet using the passed in plantName in a new window
-class factSheet extends JFrame {
-  
   /* Creating a user interface window. 
    * This will create the frame and add the factsheet(plantNameFactsheet.jpg) to display.
    * Will display an error message if the factsheet is not accessible.
    * The methods to perform these actions are all in the JFrame.
    */
   public void factSheet(plantName) {
-    } 
+    }
+
+  /* This function gets the results passed from Component 3
+  */
+  static public void getResults(ArrayList<Association<String, String>> resultsFromDB) {
+    results = resultsFromDB;    
   }
+
+  // Set up test 1
+  static public void emptyResultsTest() {
+  }
+
+  // Set up test 2
+  static public void displayResultsTest() {
+  }
+
 
 }
 
-
-
-// update about error handling
-// a button to restart
-// instance variable
 

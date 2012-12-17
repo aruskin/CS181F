@@ -1,0 +1,49 @@
+Pair Programming Report
+Siyao Xie and Skyler Lipscomb
+
+Role divisions:
+
+We each took turn being the driver and the navigator and we switched about every half an hour 
+(about 4 hours in total). The driver was the one typing the code and the navigator was the 
+one overseeing the project and provide guidance and suggestions. 
+Because we were both new to Java GUI and had not being using Java for a while, we decided
+to have the navigator looking up necessary documentation of Java swing and all of the 
+different kinds of components and methods we had to use.
+
+
+Efficiency of division of roles:
+
+This role divisions turned out to be pretty efficient. Because everything was new to us, we 
+always had to look up on the Internet. While the driver was coding the details and writing 
+the necessary comments, the navigator searched for the necessary documentation and tutorials.
+Then both of us read the documentation and tutorials and then went back to work.
+Such division of work saved us time and trouble (of switching between coding window and 
+the internet explorer) and both people were able to learn from the process.
+
+
+Speed of code development:
+
+The speed was definitely faster than working alone. When we were coding alone, we each spent
+a lot of time learning about Java GUI objects and methods. During pair programming, we learned
+together and communicated about what we had learnt before, thus the learning curve was steeper
+and we were more confident and faster when coding.
+
+
+Quality of the code:
+
+We made fewer syntax errors and got fewer compile errors because there was the second pair
+of eyes. When the driver made a mistake, most of the time the navigator was able to spot it
+right at the moment or found it pretty fast after getting a compiling error.
+
+
+Experience:
+
+It was a very pleasant experience. Neither of us tried to hold onto the keyboard and the division 
+of roles worked out. However, if we were given a chance to go back in time, we might want to
+do more pair-programming sessions, especially on the harder parts of our components. Some problems
+could been easier to solve if we had two people working together.
+
+Note:
+
+We were working on the cs lab machines and we did not have git on them, so we did not commit to github
+during our pair programming session.

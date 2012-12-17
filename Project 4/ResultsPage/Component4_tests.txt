@@ -1,0 +1,205 @@
+Component 4 Tests
+Siyao Xie
+
+Functionality Overview:
+Component 4 needs to display the search results returned by Component 3 by 
+relevancy (from the highest number of keyword matches to the lowest). For
+each plant in the list, a thumbnail image of the plant, its common name and 
+its percentage of match will be displayed. 
+
+The component also needs to handle mouse click selections and keyboard 
+inputs ("up" and "down" for scrolling). And when the user selects one plant 
+from the list, it needs to display the factsheet of the selected plant in a 
+new window. 
+
+General Approach:
+Two tests suite will be run, each with a different simulated list of search results.
+While the first test suite only tests for the case of an empty list of results,
+the second test suite tests for the rest of test cases.
+
+Test Case Index:
+
+Test Suite 1:
+ 	No Results Returned Test
+
+Test Suite 2:
+	Display Results Test
+	Unaccessible Thumbnail Test
+	Scrolling Test 
+	Display Factsheet Test
+	Unaccessible Factsheet Test
+
+
+List of Test Cases:
+
+Test Suite 1:
+No Results Returned Test
+Assertion:
+	If no result is returned by Component 3, the window should display "No 
+	results found".
+
+Justification:
+	User might input invalid searches that yield no results or the database
+	might not have the matching results. It is important to let them know
+	that the search is unsucessful.
+
+Testing:
+	This test requires simulating Component 3 returning no result (results.size() = 0).
+
+Correctness:
+	Assert the error message displayed is the intended error message. 
+
+
+Test Suite 2:
+
+Display Results Test
+Assertion: 
+	Results with a matching percentage over or equal to 50% (in this case, 11 items out of 15 returned)
+  	should be displayed in the order from the most relevant to the least relevant.
+
+Justification:
+	This is an important functional requirement.
+
+Testing:
+	With a simulated list of search results from Component 3, 
+	an interactive window will display the search results.
+
+Correctness:
+	Assert only results with over or equal to 50% relevancy is displayed. Assert the results
+	are displayed in the order of relevancy (most relevant to least relevant).
+
+
+
+Unaccessible Thumbnail Test
+Assertion:
+	When a thumbnail is missing or unaccessible, a default image
+	will be displayed instead.
+
+Justification:
+	Memory corruption or bad operations could result in file loss. The 
+	thumbnail images stored on the local disk might be temporarily
+	unaccessible, accidently deleted or renamed. To minimize the effect, 
+	a placeholder image should be displayed instead.
+
+Testing:
+	Display a list of search results where some of the thumbnails needed is
+	missing from the source folder.
+
+Correctness:
+	Assert default image is displayed when no thumbnail is available.
+
+
+
+Scrolling Test
+Assertion:
+	When pressing "up" or "down" on the keyboard, or scrolling using mouse or touchpad, 
+	the list of results should be able to scroll up and down.
+
+Justification:
+	The total length of the list of results might exceed the height of the display window, 
+	thus scrolling is needed.
+
+Testing:
+	On the display window of search results, press up arrow and down arrow on the keyboard,
+	scroll up and up with mouse and touchpad.
+
+Correctness:
+	Assert the content displayed is being scrolled up or down according to the operations
+	performed.
+
+
+Display Factsheet Test
+Assertion:
+	When clicking to select a plant in the results list, the factsheet display 
+	window will display the corresponding plant's factsheet.
+
+Justification:
+	This is an important functional requirement.
+
+Testing:
+	Click on a plant (that has an available factsheet).
+
+Correctness:
+	Assert the factsheet displayed in the new window is the corresponding factsheet.
+
+
+Unaccessible Factsheet Test
+Assertion:
+	When clicking to select a plant in the results list, if the corresponding 
+	factsheet is unavailable, the factsheet display window will display an 
+	error message "Factsheet Unavailable".
+
+Justification:
+	Memory corruption or bad operations could result in file loss. The 
+	factsheets stored on the local disk might be temporarily unaccessible, 
+	accidently deleted or renamed. The user should be notified with a clear 
+	message. No back button is necessary here since the results list page is 
+	in another window.
+
+Testing:
+	Click on a plant (that has no factsheet stored in the source folder).
+
+Correctness:
+	Assert the new window will display the correct error message "Factsheet Unavailable."
+
+
+
+Testing Instructions:
+
+Testing instructions and passing criterias are specified in the main function of ResultsPage.java as following:
+
+ public static void main(String[] args) {
+  /*
+  Test Setup 1:
+  Simulates empty list of results returned by component 3
+  Passing criterias:
+  An error message saying "No results found." should be displayed (along with a picture of a sad bunny)
+
+  ***Insturction: uncomment the next line and comment line 235 to run Test 1
+  */
+  //emptyResultsTest();
+
+  /*
+  Test Setup 2:
+  Simulates a list of results returned by component 3, including one plant that has actual thumbnail
+  and factsheet files available in the local source folder and 14 other fake(test) plants that has
+  no thumbnail or factsheet.
+  
+  Passing criterias:
+  - Results with a matching percentage over or equal to 50% (in this case, 11 items out of 15 returned)
+  should be displayed in the order from the most relevant to the least relevant.
+  - The first item in the list should be Avocado, and a thumbnail image of avocado should be displayed.
+  - The other 10 items in the list should have fake names (plant1 to plant10), the thumbnails displayed
+  should be an default image (green square).
+  - Should be able to scroll up and down using keyboard command "UP" and "DOWN" or scroll with mouse or
+  touchpad.
+  - After clicking on the first plant Avocado, a new window displaying the factsheet of avocado should
+  pop up.
+  - When clicking on any of the other 14 plants, a new window displaying an error message saying 
+  "Factsheet Unavailable." should pop up.
+
+  ***Insturction: uncomment the next line and comment line 212 to run Test 2
+  */
+  //displayResultsTest();
+ }
+
+Test Output:
+
+All tests are passed.
+
+Test 1:
+-An error message saying "No results found." is displayed when no results are returned.
+
+Test 2:
+- Only results with a matching percentage over or equal to 50% (in this case, 11 items out of 15 returned)
+are displayed in the order from the most relevant to the least relevant.
+- The first item in the list is Avocado, and a thumbnail image of avocado is displayed.
+- The other 10 items in the list have fake names (plant1 to plant10), the thumbnails displayed
+are the default image (green square).
+- Able to scroll up and down using keyboard command "UP" and "DOWN", scrolling with mouse and
+touchpad.
+- After clicking on the first plant Avocado, a new window displaying the factsheet of avocado
+pops up.
+- When clicking on any of the other 14 plants, a new window displaying an error message saying 
+"Factsheet Unavailable." pops up.
+

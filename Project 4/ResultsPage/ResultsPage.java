@@ -209,7 +209,7 @@ public void factSheet(String plantName) {
 
   ***Insturction: uncomment the next line and comment line 235 to run Test 1
   */
-  emptyResultsTest();
+  //emptyResultsTest();
 
   /*
   Test Setup 2:
@@ -232,7 +232,7 @@ public void factSheet(String plantName) {
 
   ***Insturction: uncomment the next line and comment line 212 to run Test 2
   */
-  //displayResultsTest();
+  displayResultsTest();
  }
 
 static public void emptyResultsTest() {

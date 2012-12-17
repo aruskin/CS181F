@@ -1,0 +1,84 @@
+﻿Post-Mortem Report
+
+
+During the post-mortem meeting for Project 4, we discussed the positive and negative experiences we had.
+
+
+1. We ran through the list of discussion points mentioned on the CS181F website and talked about what went well and what didn’t work.
+2.  Each person gave extensive feedback, which included questions, comments, and suggestions for future projects.
+3.  We then discussed solutions for the questions raised so that we may avoid these issues in the future.
+
+
+The positives:
+
+
+The implementation of each component design and the resulting code quality.
+1.  Most of the components work
+2.  Everyone helped each other when help was needed
+3.  The size of each component was fairly reasonable 
+The implementation of each test plan, the problems found, and the confidence gained.
+1. Test Driven Development was successful: didn’t have to perform any debugging after the code was written
+2. Testing was good for narrowing down where bugs might occur within the code
+3. Pretty good at following the original test plans
+The relative efficacy of the competing development processes.
+1.  Pair programming was successful: had experience from CS70 with pair programming
+2.  Pair programming is helpful because you can have one person code while the other edits and looks up needed information
+3.  Two brains are better than one, four are better than two; working together helped 
+speed up the process
+4.  Code review was successful and helpful; made good revisions to Component 3
+5.  Code review brought everyone up to date with the latest versions of the components
+The integration of all the components.
+        1.  Had good plans for integration
+The preparation of the release review/demo.
+        1.  Everyone knew their component and could talk extensively about the functionalities
+        2.  Everyone presented what they could and did their best
+        3.  We all had a good idea of what the other components did and how ours would 
+(hypothetically) integrate
+The overall project as an educational exercise.
+1.  Learned how to use new technologies (JavaDB, junit, GUI, etc.)
+2.  Forced each of us to learn new technologies and self teach
+3.  Realized that working together gets better results
+4.  Increased our skill levels in Java
+5.  We learned that at a certain point, what we thought was feasible might just not work;
+need to backtrack and start over
+6.  Learned how to use GitHub
+7.  Learned the basics of a big software project
+
+
+The negatives/suggestions for improvement:
+
+
+The implementation of each component design and the resulting code quality.
+1.  The code quality is not high; should have spent more time
+2.  Database algorithm is not as efficient as we originally intended due to lack of experience with JavaDB; should have had more time to play around with Derby
+3.  We all had to pick up new technologies and that held us back since we weren’t able 
+to implement everything that we thought was plausible
+4.  We didn’t take into consideration the varying levels of experience with different 
+technologies, which held us back
+5.  Things that seemed feasible in design turned out to not be easy to implement
+The implementation of each test plan, the problems found, and the confidence gained.
+1.  Difficulty testing components that use the GUI
+The relative efficacy of the competing development processes.
+1.  Had issues with time: 2 weeks is not enough time to implement everything we have been planning for 3 months
+2.  Should have done more pair programming in order to make the process easier
+3.  Felt a little rushed with the deadlines of the code review
+The integration of all the components.
+        1.  Never integrated all of the components
+        2.  Did not have enough time to integrate components
+        3.  Never even attempted to integrate parts (especially after discovering how much work 
+would be involved with just coding our own components)
+The preparation of the release review/demo.
+        1.  We weren’t able to present as much material as we had hoped for
+        2.  The release review/demo is supposed to be an opportunity for us to show off but we 
+didn’t feel proud after presenting ours
+The overall project as an educational exercise.
+        1.  Would have appreciated more help or maybe tutoring hours during Component 4 so 
+that we could get help with the new technologies that we are working with
+2.  Would have appreciated more time on Component 4 so that the most intense portion 
+is not planned during the busiest time of the semester
+3.  Should have chosen a project where we had more experience because we all felt lost during Component 4 when we actually had to implement what we had been planning; should have know what we were getting ourselves into
+4.  Everyone was frustrated and burnt out by the time Component 4 came along; hard to maintain interest in same project the entire semester
+5.  Might have been easier to use a different language like Python
+6.  Since we had so much trouble in Component 4, maybe something like a prototype phase would be helpful where we could have more time to explore the project that we have blindly chosen for ourselves
+7.  Would have appreciated more examples of each part (i.e. having a sample of what a proper architecture looks would have made our review go smoother since we would have known what to write/present)
+8.  Would like to be provided with the grading rubric before we turn homework in (the grading rubric is different from the requirements listed on the website)
